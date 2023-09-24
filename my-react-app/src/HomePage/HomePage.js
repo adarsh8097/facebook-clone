@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import HeaderArea from "../HeaderArea/HeaderArea";
 import MainArea from "../MainArea/MainArea";
 import { useNavigate } from "react-router-dom";
-import ThemeProvider from "../Theme/ThemeProvider";
+// import ThemeProvider from "../Theme/ThemeProvider";
 //import ThemeProvider from "../Theme/ThemeProvider";
 
 

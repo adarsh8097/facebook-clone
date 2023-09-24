@@ -2,8 +2,8 @@ import React from "react";
 //import { Link } from "react-router-dom";
 import './UserProfile.css';
 import ThemeProvider from "../Theme/ThemeProvider";
-import { Navigate,Link} from "react-router-dom";
- const navigate = Navigate;
+import { Link} from "react-router-dom";
+//  const navigate = Navigate;
  //import UserPost from 'SinglePost/UserPost';
  const userDetail = JSON.parse(localStorage.getItem("userDetails")|| "{}");
  console.log(userDetail);
@@ -16,9 +16,9 @@ import { Navigate,Link} from "react-router-dom";
 //  }
 
 function UserProfile(){
-     const close =()=>{
-      //  document.getElementById('bt').style.display ='none';
-     }
+    //  const close =()=>{
+    //   //  document.getElementById('bt').style.display ='none';
+    //  }
     //  const logout=()=>{
     //     localStorage.removeItem('userDetails');
     //     // setLogin('false');

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './LoginPage.css';
 //import {Button} from 'react-bootstrap/Button';
-import {Link, json, useNavigate} from 'react-router-dom';
-import { useAuth } from "react";
+import {Link, useNavigate} from 'react-router-dom';
+// import { useAuth } from "react";
 function LoginPage(){
 
 const[userName, setUserName] = useState();
 const[password, setPassword] = useState();
-const[errMessage,setErrMessage] = useState("");
+// const[errMessage,setErrMessage] = useState("");
 
 //const[hasErr, sethasErr] = useState(false);
 //const[userInfo,setUserInfo] = useState({email:"",password:"",});
