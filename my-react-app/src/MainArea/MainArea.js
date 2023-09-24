@@ -1,11 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, {  useState } from "react";
 
 import'./MainArea.css';
-import { FaAngleDown, FaCommentAlt, FaFacebookMessenger, FaFontAwesomeFlag, FaGrin, FaMedrt , FaRegShareSquare, FaRegThumbsUp, FaSearch, FaUserFriends,FaPlusCircle} from "react-icons/fa";
+import { FaAngleDown, FaFacebookMessenger, FaFontAwesomeFlag, FaGrin, FaMedrt , FaSearch, FaUserFriends,FaPlusCircle} from "react-icons/fa";
 import { MdMoreHoriz, MdVideoCall } from "react-icons/md";
 import { AiFillFileImage } from "react-icons/ai";
 import AllPost from "../AllPost/AllPots";
-import { json } from "react-router-dom";
+// import { json } from "react-router-dom";
 //import UserProfile from "../UserProfile/UserProfile";
 //import ThemeProvider from "../Theme/ThemeProvider";
 //import SinglePost from "../SinglePost/SinglePost";
@@ -27,13 +27,13 @@ const MainArea = ()=>{
     // const[title, setTitle] = useState('');
     // const[ispost,setIsPost] = useState([]);
     // //const[isbody, setIsBody] = useState([]);
-    const userDetails = localStorage.getItem("userDetails");
+    // const userDetails = localStorage.getItem("userDetails");
      const[posthead, setPostHead] = useState("");
-     const[fileInput,setFileInput] = useState([]);
-     const chooseImageInputRef = useRef();
-     const[newPostImage, setNewPostImage]= useState();
+    //  const[fileInput,setFileInput] = useState([]);
+    //  const chooseImageInputRef = useRef();
+    //  const[newPostImage, setNewPostImage]= useState();
 
-     const[count,setCount] = useState(0);
+    //  const[count,setCount] = useState(0);
 
     //  const handleLoginModal = ()=>{
     //      if(userDetail){
