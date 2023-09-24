@@ -1,0 +1,201 @@
+.main_body{
+    top: 0px;
+    right: 0px;
+    margin: 50px;
+    position: absolute;
+    z-index: 10;
+    width: 350px;
+
+}
+
+.body-T{
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.2)  0px 10px 20px;
+    width: 100%;
+    position: relative;
+    
+}
+
+.body-form{
+    background-color: white;
+    width: 100%;
+}
+
+.header-title{
+    margin: 10px 0px;
+}
+.btn-1{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 10px;
+    outline: none;
+    border-width: 0px;
+    background: none;
+    transition: background-color 0.3s ease 0s;
+    cursor: pointer;
+    width: 100%;
+
+
+} 
+
+.header-content{
+    display: flex;
+    width: 100%;
+    -webkit-box-align: center;
+    align-items: center;
+
+}
+
+.header-content-box{
+    margin: 0px auto 0px 10px;
+
+}
+.header-text{
+    font-family: Arial;
+    font-size: 1rem;
+    color: rgb(0,0,0);
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-body{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+
+}
+
+ .profileimg{
+    border-radius: 100%;
+    object-fit: cover;
+    display: block;
+    -webkit-user-drag: none;
+    width: 70px;
+    height: 70px;
+    align-items: center;
+    
+
+
+}
+
+.test-body{
+    margin:  0px 0px 0px 15px;
+}
+.text-1{
+    font-family: Arial;
+    font-size: 2rem;
+    color: rgb(20,20,20);
+    font-weight: bold;
+    display: block;
+}
+
+.text-2{
+    font-family: Arial;
+    font-size: 1.3rem;
+    color: gray;
+    display: block;
+    font-weight: bold;
+}
+
+.abc{
+    margin: 10px 0px;
+    /*background-color: rgba(0, 0, 0, 0.3);*/
+
+}
+
+.cde{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 12px 10px;
+    border-radius: 10px;
+    outline: none;
+    border-width: 0px;
+    background: none;
+    transition: background-color 0.3s ease 0s;
+    cursor: pointer;
+    width: 100%;
+
+
+}
+
+.fgh{
+    display: flex;
+    width: 100%;
+    -webkit-box-align: center;
+    align-items: center;
+
+}
+
+.ijk{
+    border-radius: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-pack: center;
+    height: 40px;
+    width: 40px;
+    color: black;
+
+}
+/*svg[Attributes Style]{
+    stroke: currentcolor;
+    fill: currentcolor;
+    stroke-width: 0;
+    height: 20px;
+    width: 20px;
+}*/
+
+.lmn{
+    margin: 0px auto 0px 10px;
+}
+
+.opq{
+    font-family: Arial;
+    font-size: 1.5rem;
+    color: rgb(66,66,66);
+    text-align: left;
+    font-weight: bold;
+    
+
+}
+
+.cmd{
+    padding: 10px;
+}
+
+.dmg{
+    font-family: Arial;
+    font-size: 1.2rem;
+    color: gray;
+}
+
+.line1{
+    background-color: gray;
+    border: 1px solid;
+    width: 100%;
+
+}
+
+.btn1{
+    width: 30px;
+    margin-left: 80% ;
+    font-weight: bold;
+    border-radius: 100%;
+    height: 30px;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    
+ 
+ 
+ }

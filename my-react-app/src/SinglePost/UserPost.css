@@ -1,0 +1,28 @@
+.psotsSection{
+   display:Flex;
+ justify-content: center;
+    align-items: stretch;
+    flex-shrink: 1;
+    padding: 0 32px;
+    box-sizing: border-box;
+    flex-basis: 744px;
+    flex-grow: 1;
+    position: relative;
+    min-width: 0;
+    z-index: 0;
+}
+
+.contentArea{
+    display: flex;
+    flex-flow: column,nowrap;
+    position: relative;
+    min-width: 0;
+    z-index: 0;
+    max-width: 100%;
+    margin-top: 13px;
+}
+
+.endofSection{
+    width: 100%;
+    min-height: 60px;
+}
