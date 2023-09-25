@@ -1,5 +1,4 @@
 import React, {  useState } from "react";
-
 import'./MainArea.css';
 import { FaAngleDown, FaFacebookMessenger, FaFontAwesomeFlag, FaGrin, FaMedrt , FaSearch, FaUserFriends,FaPlusCircle} from "react-icons/fa";
 import { MdMoreHoriz, MdVideoCall } from "react-icons/md";
