@@ -7,6 +7,7 @@ import { Link, } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 function SignUp()
 {    
+   
    /*  useEffect(()=>{
         const url = 'https://drive.google.com/file/d/1dnmVLyT_zsb0ve-Z5zctILO2_n7TZICA/view?usp=sharing';
 
