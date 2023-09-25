@@ -91,7 +91,7 @@ const navigate = useNavigate();
          localStorage.setItem('userDetails',JSON.stringify(userData));
          alert(`welcome ${userData.name}`);
          console.log(userData);
-         navigate("/");
+         navigate("/HomePage");
         // if(userData){
         //     navigate('/HomePage');
         // }else{
@@ -114,7 +114,7 @@ useEffect(()=>{
    //const userData= localStorage.setItem('userDetails',JSON.stringify(userData));
     const userDetails = localStorage.getItem('userDetails');
    if(!userDetails){
-    navigate('/LoginPage');
+    navigate('/');
    }
 //    else{
 //     navigate('/HomePage');
