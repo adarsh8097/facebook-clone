@@ -10,6 +10,7 @@ import UserProfile from './UserProfile/UserProfile';
 import ThemeProvider from './Theme/ThemeProvider';
 //import AllPost from './AllPost/AllPots';
 
+
 function App() {
   
   return (
