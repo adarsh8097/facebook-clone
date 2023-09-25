@@ -14,7 +14,7 @@ function HomePage(){
 
     useEffect(()=>{
         if(!userDetail){
-           navigate("/LoginPage");
+           navigate("/");
         }
         fetch("https://academics.newtonschool.co/api/v1/facebook/post/",{
             method:"GET",
