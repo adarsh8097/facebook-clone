@@ -21,12 +21,12 @@ function App() {
     
       <Routes>
     
-        <Route path='/LoginPage'  exact={true} element={ <LoginPage /> }/>
+        <Route path='/'  exact={true} element={ <LoginPage /> }/>
 
         <Route path='/HeaderArea' element={ <HeaderArea /> }/>
        <Route path='/SignUp' element={<SignUp/>}/>
        <Route path='/Flage' element={<Flage/>}/>
-       <Route path='/' element={<HomePage/>}/>
+       <Route path='/HomePage' element={<HomePage/>}/>
         {/* <Route path='/AllPost' element={<AllPost/>}/> */}
        <Route path='/UserProfile' element={<UserProfile/>}/>
     <Route path='/ThemeProvider' element={<ThemeProvider/>}/>
