@@ -11,8 +11,6 @@ import AllPost from "../AllPost/AllPots";
 // import UserPost from '../SinglePost/UserPost';
 const userDetail = JSON.parse(localStorage.getItem("userDetails")|| "{}");
 
-  
-
 const MainArea = ()=>{
     
     function close(){
