@@ -28,7 +28,7 @@ const MainArea = ()=>{
     // const[ispost,setIsPost] = useState([]);
     // //const[isbody, setIsBody] = useState([]);
     // const userDetails = localStorage.getItem("userDetails");
-     const[posthead, setPostHead] = useState("");
+     const[posthead, setPostHead] = useState(false);
     //  const[fileInput,setFileInput] = useState([]);
     //  const chooseImageInputRef = useRef();
     //  const[newPostImage, setNewPostImage]= useState();
