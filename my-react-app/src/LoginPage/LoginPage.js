@@ -91,7 +91,7 @@ const navigate = useNavigate();
          localStorage.setItem('userDetails',JSON.stringify(userData));
          alert(`welcome ${userData.name}`);
          console.log(userData);
-         navigate("/HomePage");
+         navigate("/");
         // if(userData){
         //     navigate('/HomePage');
         // }else{
@@ -180,7 +180,7 @@ useEffect(()=>{
                         <div className='sign_spliter'></div>
                       <Link to="/SignUp"><button className='blue_btn2 open-signup'>Create Account</button> </Link>
                         </div>
-                    <Link to="/" className='sign_extra'>
+                    <Link to="/extra" className='sign_extra'>
                         <b>create a Page </b>
                          for a celebrity, brand or business.
                     </Link>
