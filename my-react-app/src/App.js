@@ -26,7 +26,7 @@ function App() {
         <Route path='/HeaderArea' element={ <HeaderArea /> }/>
        <Route path='/SignUp' element={<SignUp/>}/>
        <Route path='/Flage' element={<Flage/>}/>
-       <Route path='/HomePage' element={<HomePage/>}/>
+       <Route path='/' element={<HomePage/>}/>
         {/* <Route path='/AllPost' element={<AllPost/>}/> */}
        <Route path='/UserProfile' element={<UserProfile/>}/>
     <Route path='/ThemeProvider' element={<ThemeProvider/>}/>
