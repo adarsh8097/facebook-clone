@@ -163,7 +163,7 @@ const submitform =()=>{
                 localStorage.setItem("userDetails", JSON.stringify(data));
                 console.log("Success");
                 alert('Registration Succesfully!');
-             navigate('/Loginpage');
+             navigate('/');
                     }
             
         })
@@ -214,7 +214,7 @@ const submitform =()=>{
                     <p className="signup-p">It's quick and easy </p>
                    </div>
                     <div>
-                   <Link to="/LoginPage"> <img class="xform" src="https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/11W0xEwKS62.png" alt="close-btn" style={{ width:"24px",height:"24px", cursor:"pointer" }}/></Link>
+                   <Link to="/"> <img class="xform" src="https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/11W0xEwKS62.png" alt="close-btn" style={{ width:"24px",height:"24px", cursor:"pointer" }}/></Link>
                
                     </div>
                 </div>
