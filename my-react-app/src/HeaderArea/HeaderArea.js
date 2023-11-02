@@ -18,16 +18,17 @@ function HeaderArea(){
     
      const[isClicked , setIsClicked] = useState(false);
          
-     const openbtn =(e)=>{
-        e.preventDefault();
+     const openbtn =()=>{
+        // e.preventDefault();
          setIsClicked(!isClicked);
-
-       if(!isClicked){
-         document.getElementById('myupc').style.display="none";
-       }else{
-            document.getElementById('myupc').style.display="block";
-       }
      }
+
+    //    if(!isClicked){
+    //      document.getElementById('myupc').style.display="none";
+    //    }else{
+    //         document.getElementById('myupc').style.display="block";
+    //    }
+    //  }
     
     
 
@@ -80,7 +81,7 @@ function HeaderArea(){
 
             <div className="middle-header">
                     <div className="Icon">
-                        <AiFillHome fontSize="3rem" color="#1877f2"/>
+                      <Link to="/HomePage"> <AiFillHome fontSize="3rem" color="#1877f2"/></Link>
                     </div>
                     <div className="Icon">
                         
@@ -128,10 +129,11 @@ function HeaderArea(){
                      {/*<div class="sc-11rr3rd-0 iqxmt7-0 star Online">.</div>*/}
                      
                       </div>
-                    <div id="myupc">
+                 {isClicked && <div id="myupc">
                        {/* <button id="ufg" onClick={close}>X</button>*/}
                         <UserProfile/>
                         </div>
+                  }
              
                 </div>
                 

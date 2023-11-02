@@ -1,4 +1,5 @@
 import React, {  useState } from "react";
+
 import'./MainArea.css';
 import { FaAngleDown, FaFacebookMessenger, FaFontAwesomeFlag, FaGrin, FaMedrt , FaSearch, FaUserFriends,FaPlusCircle} from "react-icons/fa";
 import { MdMoreHoriz, MdVideoCall } from "react-icons/md";
@@ -11,21 +12,29 @@ import AllPost from "../AllPost/AllPots";
 // import UserPost from '../SinglePost/UserPost';
 const userDetail = JSON.parse(localStorage.getItem("userDetails")|| "{}");
 
+  
+
 const MainArea = ()=>{
     
     function close(){
         document.getElementById('mod1').style.display="none";
     }
 
-    function open(){
-        document.getElementById('mod1').style.display="block";
-    }
-    
+    // function open(){
+    //     document.getElementById('mod1').style.display="block";
+    // }
+     const[openModel,setOpenModel] = useState(false);
+
+       const model=()=>{
+
+         setOpenModel(!openModel);
+       }
+
     // const[title, setTitle] = useState('');
     // const[ispost,setIsPost] = useState([]);
     // //const[isbody, setIsBody] = useState([]);
     // const userDetails = localStorage.getItem("userDetails");
-     const[posthead, setPostHead] = useState('');
+     const[posthead, setPostHead] = useState("");
     //  const[fileInput,setFileInput] = useState([]);
     //  const chooseImageInputRef = useRef();
     //  const[newPostImage, setNewPostImage]= useState();
@@ -47,7 +56,7 @@ const MainArea = ()=>{
             if(posthead === ''){
                 alert(`Write something! ${userDetail.name}`);
             }else{
-                alert(`Sorray ${userDetail.name} this Componet not wrok some server issue please try after some time!`);
+                alert(`Sorry ${userDetail.name} this Componet not wrok some server issue please try after some time!`);
                 document.getElementById('mod1').style.display="none";
             }
         // var myHeaders = new Headers();
@@ -153,7 +162,7 @@ const MainArea = ()=>{
     <div className="Main">
         <div className="Rside">
            <div className="Profile">
-                <img src="/images/images.jpg" alt="dp" style={{height:"60px", width:"60px" , padding:"1rem"}}/>  
+                <img src="/images/images.jpg" alt="dp" style={{height:"60px", width:"60px",padding:"1rem"}}/>  
                 <span>{userDetail.name}</span>
             </div>
             <div className="Pro">
@@ -281,9 +290,10 @@ const MainArea = ()=>{
                 <div className="text" >
                     <div className="Post">
                         <img src ="/images/images.jpg" alt="PIC"/>
-                        <button  className="abc1"  onClick={open} > 
+                       <button  className="abc1" onClick={model}> 
                         <span className="hd1">What's your mind, <span>{userDetail.name}</span>?</span>
                         </button>
+                       
 
                     </div>
                        <div className="dulo" style={{border:"1px solid rgba(0,0,0,0.2)" ,width:"80%" , marginLeft:"5rem"}}></div> 
@@ -365,13 +375,13 @@ const MainArea = ()=>{
                </div> 
            </div> 
 
-           <div className="model" data-tested="model" id="mod1" >
+          {openModel &&  <div className="model" data-tested="model" id="mod1" >
             <div className="model-outer">
                 <div role="dilog" className="model-part">
                     <div className="model-head" style={{transform:'none'}}>
                         <div className="bube-head">
                             <div className="bwamfe">
-                                <button className="cxgy"onClick={close}  >
+                                <button className="cxgy" onClick={close}>
                                     <svg className="store">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M7.116 8l-4.558 4.558.884.884L8 8.884l4.558 4.558.884-.884L8.884 8l4.558-4.558-.884-.884L8 7.116 3.442 2.558l-.884.884L7.116 8z"></path>
                                     </svg>
@@ -505,7 +515,8 @@ const MainArea = ()=>{
 
             </div>
 
-           </div>
+           </div> 
+          }
 
         <div className="Lside">
                <div className="Contact">
