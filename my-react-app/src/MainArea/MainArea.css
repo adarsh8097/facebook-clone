@@ -14,8 +14,10 @@
     font-size: 1.8rem;
     font-weight: 550;
     margin-top: 60px;
+    cursor: pointer;
+   
 }
-.Profile>img{
+ .Profile>img {
     border-radius: 50%;
     width: 10%;
    
@@ -28,6 +30,7 @@
     font-weight: 550;
     padding: 1.2rem;
     padding-left: 1rem;
+    cursor: pointer;
 }
 .Pro >div{
     margin: 10px;

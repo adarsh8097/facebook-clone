@@ -5,6 +5,7 @@ import { FaAngleDown, FaFacebookMessenger, FaFontAwesomeFlag, FaGrin, FaMedrt , 
 import { MdMoreHoriz, MdVideoCall } from "react-icons/md";
 import { AiFillFileImage } from "react-icons/ai";
 import AllPost from "../AllPost/AllPots";
+import { Link } from "react-router-dom";
 // import { json } from "react-router-dom";
 //import UserProfile from "../UserProfile/UserProfile";
 //import ThemeProvider from "../Theme/ThemeProvider";
@@ -156,35 +157,45 @@ const MainArea = ()=>{
     //     setUpdtePost([...uposts,newPost]);
     //  };
    
+    function onalert(){
+        alert("comming soon");
+    }
 
+    function onupdate(){
+        alert("not update data show...!");
+    }
+    
+    function onshow(){
+        alert("cant uplode more item because server is not responding please try after some time !");
+    }
 
     return(
     <div className="Main">
         <div className="Rside">
-           <div className="Profile">
-                <img src="/images/images.jpg" alt="dp" style={{height:"60px", width:"60px",padding:"1rem"}}/>  
+        <div className="Profile">
+        <Link to="/UserProfileDetails"> <img src="/images/images.jpg" alt="dp" style={{height:"60px", width:"60px",padding:"1rem",borderRadius: "50%"}}/>  </Link> 
                 <span>{userDetail.name}</span>
             </div>
-            <div className="Pro">
-                <FaUserFriends color="blue" fontSize="2rem" />
+            <div className="Pro" >
+                <FaUserFriends color="blue" fontSize="2rem" onClick={onalert}/>
                 <div>Friends</div>
             </div>
             <div className="Pro">
-                <FaFontAwesomeFlag color="green" fontSize="2rem" />
+                <FaFontAwesomeFlag color="green" fontSize="2rem" onClick={onalert} />
                 <div>Pages</div>
             </div>
             <div className="Pro">
-                <FaMedrt color="blue" fontSize="2rem" />
+                <FaMedrt color="blue" fontSize="2rem" onClick={onupdate}/>
                 <div>COVID-19 Information Center</div>
             </div>
             <div className="Pro">
-                <FaFacebookMessenger color="green" fontSize="2rem" />
+                <FaFacebookMessenger color="green" fontSize="2rem" onClick={onupdate}/>
                 <div>Messenger Kids</div>
             </div>
            
            
             <div className="Pro">
-                <FaAngleDown color="blue" fontSize="2rem" />
+                <FaAngleDown color="blue" fontSize="2rem" onClick={onshow} />
                 <div>See More</div>
             </div>
         
@@ -207,7 +218,7 @@ const MainArea = ()=>{
             </div>
 
             <div className="Pross">
-                <FaAngleDown color="blue" fontSize="2rem" />
+                <FaAngleDown color="blue" fontSize="2rem"  onClick={onshow}/>
                 <div>See More</div>
             </div>
          </div> 
@@ -300,15 +311,15 @@ const MainArea = ()=>{
                     <div className="Call">
                         <div className="ico">
                           <div className="icone">
-                            <MdVideoCall fontSize="3rem" color="red" />
+                            <MdVideoCall fontSize="3rem" color="red" onClick={onalert}/>
                             <div className="Fm">LiveVideo</div>  
                           </div>
                           <div className="icone">
-                            <AiFillFileImage  fontSize="2.5rem" color="green"/>
+                            <AiFillFileImage  fontSize="2.5rem" color="green" onClick={onalert}/>
                             <div className="Fm">Photo/Video</div>
                             </div>  
                             <div className="icone">
-                               <FaGrin fontSize="2.5rem" color="orange"/>
+                               <FaGrin fontSize="2.5rem" color="orange" onClick={onalert}/>
                                <div className="Fm">Felling/activity</div> 
                              </div>  
                          </div>

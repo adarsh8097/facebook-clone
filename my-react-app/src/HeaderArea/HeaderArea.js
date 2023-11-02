@@ -63,6 +63,14 @@ function HeaderArea(){
         }
       }*/
 
+      function onalert(){
+        alert('comming soon..!');
+      }
+
+       
+      function onmesg(){
+        alert("Network issue can't uploded your data please try after sometime ");
+      }
     return(
         
         <div className ="HomePage">
@@ -70,7 +78,7 @@ function HeaderArea(){
 
             <div className ="first-header">
               <div className="logo">
-                <img src ="/images/logo-img.png" alt="logo" style={{height:"80px", padding:"1rem"}} />
+             <Link to="/HomePage"> <img src ="/images/logo-img.png" alt="logo" style={{height:"80px", padding:"1rem"}} /></Link>
                 </div>
 
                 <div className="Search">
@@ -91,15 +99,15 @@ function HeaderArea(){
                     </div>
                     
                     <div className="Icon">
-                      <Link to="https://www.facebook.com/watch/shows" > <MdOndemandVideo fontSize="2.5rem" color="black" /></Link>
+                       <MdOndemandVideo fontSize="2.5rem" color="black" onClick={onalert}/>
                         <div class="sc-11rr3rd-0 iqxmt7-0 hoFBBP goNsGa">10</div>
                     </div>
                     <div className="Icon">
-                      <Link to="https://www.facebook.com/friends">  <FaUsers fontSize="2.5rem" color="black" /></Link>
+                       <FaUsers fontSize="2.5rem" color="black" onClick={onalert}/>
                         <div class="sc-11rr3rd-0 iqxmt7-0 hoFBBP goNsGa">20</div>
                     </div>
                     <div className="Icon">
-                        <AiOutlineWallet fontSize="2.5rem" />
+                        <AiOutlineWallet fontSize="2.5rem" onClick={onalert}/>
                     </div>
             </div>
                  <div className="third-header">
@@ -108,11 +116,11 @@ function HeaderArea(){
                         <FaPlusCircle fontSize= "2rem"/>
                     </div>
                     <div className="plus">
-                        <FaFacebookMessenger fontSize= "2rem"/>
+                        <FaFacebookMessenger fontSize= "2rem"  onClick={onmesg}/>
                         <div class="sc-11rr3rd-0 iqxmt7-0 hoFBBP goNsGa">20</div>
                     </div>
                     <div className="plus">
-                        <FaBell fontSize= "2rem"/>
+                        <FaBell fontSize= "2rem" onClick={onmesg}/>
                         <div class="sc-11rr3rd-0 iqxmt7-0 hoFBBP goNsGa">40</div>
                         
                     </div>

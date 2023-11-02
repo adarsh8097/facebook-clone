@@ -75,7 +75,7 @@ function UserProfile(){
                                 <img className="img-sum profileimg" src="images/images.jpg" alt="profile"/>
                                 <div className="test-body">
                                    <span className="text-1">{userDetail.name}</span>
-                                    <span className="text-2">See your profile</span>
+                                   <Link to="/UserProfileDetails"> <span className="text-2">See your profile</span></Link>
 
                                  </div>
                              </div>
