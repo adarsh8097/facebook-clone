@@ -16,6 +16,8 @@ const userDetail = JSON.parse(localStorage.getItem("userDetails")|| "{}");
   
 
 const MainArea = ()=>{
+
+    
     
     function close(){
         document.getElementById('mod1').style.display="none";

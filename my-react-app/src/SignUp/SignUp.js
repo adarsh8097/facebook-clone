@@ -163,7 +163,7 @@ const submitform =()=>{
                }else{
                 localStorage.setItem("userDetails", JSON.stringify(data));
                 console.log("Success");
-                alert('Registration Succesfully!');
+                // alert('Registration Succesfully!');
              navigate('/');
                     }
             

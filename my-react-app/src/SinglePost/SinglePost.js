@@ -8,8 +8,20 @@ const userDetail = JSON.parse(localStorage.getItem("userDetails")|| "{}");
 //const navigate = useNavigate();
 const  SinglePost =({item})=>{
 
-    const[count,setCount] = useState(0);
+     const[count,setCount] = useState(0);
 
+    const handleLikeClick = (itemId) => {
+      
+          if (item.id === itemId) {
+            // Toggle the liked state
+            const newLikeCount = item.liked
+              ? item.likeCount - 1
+              : item.likeCount + 1;
+            return { ...item, likeCount: newLikeCount, liked: !item.liked };
+          }
+          return item;
+       
+    }
     const handleLoginModal = ()=>{
         if(userDetail){
          setCount(count+1);
@@ -52,8 +64,8 @@ const  SinglePost =({item})=>{
         </div>
 
         <div className="Comment">
-            <div className="Like" onClick={handleLoginModal} >
-             <FaRegThumbsUp color="grey" fontSize="1.5rem"/>{count}
+            <div className="Like" likeCount={item.likeCount} onClick={()=>handleLoginModal} liked={item.liked}>
+             <FaRegThumbsUp color="grey" fontSize="1.5rem"/> {item.likeCount}
             </div>
             <div className="Like">
                 <FaCommentAlt color="grey"/>
