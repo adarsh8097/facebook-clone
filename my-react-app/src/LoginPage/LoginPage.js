@@ -100,12 +100,9 @@ console.log(userToken)
                 localStorage.setItem('userdetails',JSON.stringify(userData));
                 setUserDetail(userData);
                 setUserToken(userToken);
-                // console.log('userDataToken',userToken.data);
-                // alert(`welcome ${userData.name}`)
+           
                  toast.success(`welcome ${userData.name}`);
-                //  console.log("userEamil",userData.email);
-                //  console.log("UserToken",userToken);
-                //  console.log("useData",userData.token);
+              
 
                  navigate("/HomePage"); 
              }else{
@@ -120,13 +117,7 @@ console.log(userToken)
      }
   }
    
-//   let RegisterDetils = JSON.parse(localStorage.getItem('userdetails') || "{}");
-//   console.log("RegisterDetails",RegisterDetils);
-//   console.log("RegisterDetailsName",RegisterDetils.name);
 
-//   let RegisterToken = JSON.parse(localStorage.getItem('userTokens') || "{}");
-//   console.log("RegisterToken",RegisterToken);
- 
 
       
 

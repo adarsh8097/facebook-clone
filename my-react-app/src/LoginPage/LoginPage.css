@@ -1,157 +1,4 @@
 
-/*body{
-    font: 1.6 helvetica;
-    box-sizing: border-box;
-    background-color: #f0f2f5;
-    
-}
-
-.Login{
-    width: 100%;
-    height: 40rem;
-    display: flex;
-    border-radius: 1rem;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
-}
-
-.facebooktext{
-   
-    font-size: 4rem;
-    color: #1877f2;
-    font-weight: 700;
-    margin-right: 0rem;
-    margin-right: 10rem;
-}
-
-.title{
-    font-size: 1.8rem;
-    color: rgba(0, 0, 0, 0.8);
-    font-weight: 500;
-    margin-left: 20px;
-}
-
-
-.LoginContainer{
-    border: white .3rem solid;
-    background-color: white;
-    height: 22rem;
-    width: 25rem;
-    padding: 1rem;
-    border-radius: .7rem;
-}
-
-input[type=email]{
-    width: 100%;
-    padding: 15px 15px;
-    margin: 6px 0;
-    box-sizing: border-box; 
-    opacity:0.5;
-    border-radius: 0.5rem;
-    outline-color: #1877f2;
-
-}
-
-input[type=password] {
-    width: 100%;
-    padding: 15px 15px;
-    margin: 6px 0;
-    box-sizing: border-box;
-    opacity:0.5;
-    border-radius: .5rem;
-    outline-color: #1877f2;
-}
-
-input ::placeholder{
-    font-size: 2rem;
-    font-weight: bold;
-
-}
-
-.btn{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    background-color: #1877f2;
-    border: none;
-    box-sizing: border-box;
-    padding: 15px 32px;
-    justify-content: center;
-    margin: 4px 2px;
-    color: white;
-    border-radius: .5rem;
-    cursor: pointer;
-    font-weight: bold;
-
-}
-
-.forget a{
-    color: #1877f2;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    font-size: 1rem;
-    padding-top: 10px;
-    text-decoration: none;
-}
-
-.btns{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #f0f2f5;
-    background-color: #42b742;
-    border: none;
-    padding: 25px 32px;
-    text-decoration: none;
-    font-size: 18px;
-    cursor: pointer;
-    width: 70%;
-    font-weight: bold;
-    border-radius: 0.5rem;
-    margin-left: 15%;
-    height: 3rem ;
-    font-size: 1.2rem;
-
-}
-
-
-.page a{
-    font-size: 1rem;
-    color: black;
-    display: inline-block;
-    justify-content: center;
-    justify-items: center;
-    text-decoration: none;
-    font-weight: bold;
-
-}
-
-.page{
-    font-size: 1rem;
-    padding-left: 2%;
-    
-
-}
-
-.LoginDetails{
-    border-bottom: .1rem black solid;
-    
-
-}
-
-.btn a{
-    text-decoration: none;
-    color: white;
-}
-
-.btn a:hover{
-    color: black;
-} 
-*/
-
 
 .fb-image img{
     width: 100%;
@@ -311,4 +158,50 @@ align-items: center;
 input::placeholder{
     font-size: 17px;
    
+}
+
+/* Add mobile-responsive styles */
+@media only screen and (max-width: 600px) {
+    .login_wrapper {
+        justify-content: flex-start; /* Align content to the start for mobile */
+        padding: 20px; /* Add padding for better spacing */
+    }
+
+    .login_wrap {
+        margin-right: 0; /* Remove right margin */
+        align-items: center; /* Align items to the center */
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .login_1 {
+        width: auto; /* Adjust width */
+        text-align: center; /* Center text */
+        margin-top: -30px; /* Remove margin */
+    }
+
+    .login_2_wrap {
+        width: 100%;
+        /* margin: auto; Adjust width */
+        /* padding: 20px; */
+        padding-right: 25px;
+        justify-content: center;
+        align-items: center;
+        margin-left: 20px;
+    }
+
+    .login_2_wrap input {
+        width: 100%; /* Make input fields full width */
+    }
+
+    .blue_btn1 {
+        width: 100%; /* Make login button full width */
+    }
+
+    .blue_btn2 {
+        width: 100%; /* Make signup button full width */
+    }
+
+    .sign_extra {
+        font-size: 1.4rem; /* Adjust font size */
+    }
 }
