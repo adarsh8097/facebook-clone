@@ -153,31 +153,39 @@ input ::placeholder{
 */
 
 
-
+.fb-image img{
+    width: 100%;
+    height: 100%;
+    
+}
 
 .login_wrapper{
 
+ /* justify-content: space-evenly;  */
+justify-content: center;
+align-items: center;
 
- justify-content: space-between; 
+
 
 
 }
 
 .login_wrap{
     
-   margin-right: 10rem;
+   margin-right: 20rem;
    display: flex;
    justify-content: center;
    flex-direction: row;
    margin-top: 15rem;
-   row-gap: 15px;
+   /* row-gap: 15px; */
   
 }
 
 .login_1{
 
     width: 490px;
-    margin: 24px auto;
+    margin: 25px auto;
+
     
 
 }
@@ -187,6 +195,7 @@ input ::placeholder{
     font-size: 24px;
     line-height: 28px;
     width: auto;
+    margin-left: 25px;
 
 
 }
@@ -194,6 +203,9 @@ input ::placeholder{
 .login_2{
     
     text-align: center;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    margin-top: -3rem;
 
 }
 
@@ -299,9 +311,4 @@ input ::placeholder{
 input::placeholder{
     font-size: 17px;
    
-   
-    justify-self: start;
-    
-    
-    
 }

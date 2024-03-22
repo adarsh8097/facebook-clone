@@ -1,178 +1,169 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './LoginPage.css';
-//import {Button} from 'react-bootstrap/Button';
-import {Link, useNavigate} from 'react-router-dom';
-// import { useAuth } from "react";
+import {Link, json, useNavigate} from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { MyContext } from '../Context/Context';
+
+const  ProjectId = 'f104bi07c490';
 function LoginPage(){
 
 const[userName, setUserName] = useState();
 const[password, setPassword] = useState();
-// const[errMessage,setErrMessage] = useState("");
 
-//const[hasErr, sethasErr] = useState(false);
-//const[userInfo,setUserInfo] = useState({email:"",password:"",});
+const {setUserDetail,setUserToken,userDetail,userToken} = useContext(MyContext);
 
-//const[isLogin , setLogin] = useState('false');
 
 const navigate = useNavigate();
-//const {user,setUser} = useAuth();
-
-//const HandleLogin=()=>{
-   // e.preventDefault();
-
-    // fetch("https://academics.newtonschool.co/api/v1/user/login",{
-    //     method:"POST",
-    //     headers:{
-    //         "Content-Type": "application/json",
-    //     projectId: "f104bi07c490",
-    //     },
-
-    //     body:JSON.stringify({
-    //         email: userName,
-    //         password: password,
-    //     }),
-    // })
-    // .then((resp)=>{
-        
-    //     if(resp.status >= 400){
-    //         new Error("Faild to login");
-    //       //alert("UserName or passwrod is incorrect!")
-    //     }
-    //     return resp.json();
-        
-
-    // }).then((data)=>{
-    //     var resdata = JSON.stringify(data);
-    //     console.log(resdata);
-    //     alert(data.message);
-    //    // localStorage.setItem("userDetails",);
-    //     localStorage.setItem('authToken',data.token);
-    //     localStorage.setItem('userInfo',  JSON.stringify(data))
-       
-    //    // setLogin(true);
+console.log(userDetail)
+console.log(userToken)
 
 
-    // });
-
-   // navigate("/HomePage");
-
-
-   const LoginUp =async()=>{
-   // userInfo.appType = "facebook";
-    try{
-        const responce = await fetch('https://academics.newtonschool.co/api/v1/user/login',{
-            method:'POST',
+//    const LoginUp =async()=>{
+//    // userInfo.appType = "facebook";
+//     try{
+//         const responce = await fetch('https://academics.newtonschool.co/api/v1/user/login',{
+//             method:'POST',
            
-              headers:{
-                            "Content-Type": "application/json",
-                        projectId: "f104bi07c490",
-               },
+//               headers:{
+//                          "Content-Type": "application/json",
+//                         projectId: "f104bi07c490",
+//                },
 
-               body:JSON.stringify({
-                        email: userName,
-                        password: password,
-                        appType: 'facebook' ,
+//                body:JSON.stringify({
+//                         email: userName,
+//                         password: password,
+//                         appType: 'facebook' ,
 
                         
-              }),
+//               }),
             
              
-        });
+//         });
         
-         const data = await responce.json();
-         if(responce.status >= 400){
-            alert(data.message);
-            return;
-         }
+//          const data = await responce.json();
+//          if(responce.status >= 400){
+//             alert(data.message);
+//             return;
+//          }
 
-         const userData = data.data;
-        data.data ={};
-        data.data.user = userData;
-         localStorage.setItem('userDetails',JSON.stringify(userData));
-         alert(`welcome ${userData.name}`);
-         console.log(userData);
-         navigate("/HomePage");
-        // if(userData){
-        //     navigate('/HomePage');
-        // }else{
-        //     navigate('/LoginPage');
-        // }
-      
+        //  const userData = data.data;
+        // data.data ={};
+        // data.data.user = userData;
+        //  localStorage.setItem('userDetails',JSON.stringify(userData));
+        //  alert(`welcome ${userData.name}`);
+        //  console.log(userData);
+        //  navigate("/HomePage");
+     
 
-    } catch(err){
-        console.log('error',err);
-    }
+//     } catch(err){
+//         console.log('error',err);
+//     }
 
-   };
+//    };
+// let RegisterDetils = JSON.parse(localStorage.getItem('userdetails'));
+//  console.log(RegisterDetils);
 
+
+  const LoginUp =async(e)=>{
+    e.preventDefault();
+    console.log(userName)
+    console.log(password)
+     try{
+     const response =   await fetch('https://academics.newtonschool.co/api/v1/user/login', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'projectID': ProjectId,
+    },
+    body: JSON.stringify({
+        email: userName,
+        password: password,
+        appType: 'facebook'
+    })
+})
+
+  let data = await response.json();
+  console.log("response data",response)
+
+
+
+ if(response.ok){
   
    
-  
+                const userData = data.data;
+                const userToken = data.token;
+                console.log("userToken",userToken);
+                console.log("userData",userData)
+                sessionStorage.setItem('userTokens',JSON.stringify(userToken));
+                localStorage.setItem('userTokens',JSON.stringify(userToken));
+                localStorage.setItem('userdetails',JSON.stringify(userData));
+                setUserDetail(userData);
+                setUserToken(userToken);
+                // console.log('userDataToken',userToken.data);
+                // alert(`welcome ${userData.name}`)
+                 toast.success(`welcome ${userData.name}`);
+                //  console.log("userEamil",userData.email);
+                //  console.log("UserToken",userToken);
+                //  console.log("useData",userData.token);
 
-useEffect(()=>{
-  LoginUp();
-   //const userData= localStorage.setItem('userDetails',JSON.stringify(userData));
-    const userDetails = localStorage.getItem('userDetails');
-   if(!userDetails){
-    navigate('/');
-   }
-//    else{
-//     navigate('/HomePage');
-//    }
-       
+                 navigate("/HomePage"); 
+             }else{
+                // alert(data.message)
+            toast.error(data.message);
+     } 
+    }
+        catch(error){
+            toast.error(error.message);
 
-   },[LoginPage]);
+        console.log('UserLoginfaild',error);
+     }
+  }
+   
+//   let RegisterDetils = JSON.parse(localStorage.getItem('userdetails') || "{}");
+//   console.log("RegisterDetails",RegisterDetils);
+//   console.log("RegisterDetailsName",RegisterDetils.name);
 
-// };
-
-//  const logout =()=>{
-//     localStorage.removeItem('userDetails');
-//    // setLogin('false');
-
-//  }
-
-// useEffect(()=>{
-//     const userDetails = localStorage.getItem("userDetails");
-//     //setLogin(false);
-//     if(userDetails){
-//         navigate("/LoginPage"); 
-//     }
-    
-// },[]);
-
+//   let RegisterToken = JSON.parse(localStorage.getItem('userTokens') || "{}");
+//   console.log("RegisterToken",RegisterToken);
+ 
 
       
 
     return(
-      
-
+      <>
+        <ToastContainer/>
         <div className='login'>
             <div className='login_wrapper'>
                 <div className='login_wrap'>
                     <div className='login_1'>
-                        <img className='fb1' src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"  alt='Facebooklogo'/>
+                        <div className='fb-image'>
+                        <img className='fb1' src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg"  alt='Facebooklogo'/>
+                        </div>
                         <span>
-                            
-            Facebook helps you connect and share 
-            with the people in your life.
+                           Facebook helps you connect and share 
+                            with the people in your life.
                         </span>
                     </div>
                     <div className='login_2'>
                         <div className='login_2_wrap'>
                       
-                            <form>
-                                <input type='text' 
+                            <form onSubmit={LoginUp}>
+                                <input type='email' 
                                  placeholder="Email address or phone number"
                                   onChange={(e)=>setUserName(e.target.value)}
+                                  required
                                  />
                                 <input type='password' 
                                 placeholder="Password" 
                                  onChange={(e)=>setPassword(e.target.value)}
+                                 required
                                 />
-                              < button type='button'
+                              < button 
+                              type='submit'
                                className='blue_btn1'
-                               onClick={LoginUp}
                                >Log In</button>
+
                             </form>
                             
                             <Link to="/forgot" className='forgot-pass'>Forgotten password ?</Link>
@@ -190,7 +181,8 @@ useEffect(()=>{
             </div>
           
         </div>
-    )
+        </>
+    );
 }
 
 export default LoginPage;

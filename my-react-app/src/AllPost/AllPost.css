@@ -1,0 +1,29 @@
+
+.PostImg > img{
+    width: 100%;
+    height: auto;
+   
+
+}
+.Posted{
+    height: auto;
+    width: 80%;
+    padding: 20px;
+ }
+
+.PostImg{
+    display: block;
+    height:auto;
+    width: 100%;
+
+}
+
+@media only screen and (max-width: 600px) {
+   
+    .Posted{
+        height: auto;
+        width: 100%;
+        padding: 20px;
+     }
+
+}

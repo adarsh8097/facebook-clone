@@ -1,204 +1,63 @@
 import React, { useState } from "react";
 import './SignUp.css'
-//import { useState , useEffect  } from "react";
 import {FaQuestionCircle} from 'react-icons/fa';
 import { Link, } from "react-router-dom";
-//import { getHeaderWithProjectId } from "../Svg/Configer";
 import { useNavigate } from "react-router-dom";
-function SignUp()
-{    
-   
-   /*  useEffect(()=>{
-        const url = 'https://drive.google.com/file/d/1dnmVLyT_zsb0ve-Z5zctILO2_n7TZICA/view?usp=sharing';
-
-        const fetchData = async()=>{
-            const config = getHeaderWithProjectId();
-            try{
-                const responce = await fetch(url,config);
-                const data = await responce.json();
-                console.log('data', data);
-                
 
 
-            }
-            catch(err){
-                console.log('error', err);
-            }
-        };
-
-        fetchData();
-
-     }, []);
-     */
-
+function SignUp(){  
   
-  /*   {
-
-    const[userInfo, setUserInfo] =  useState({
-        name:"",
-        sname:"",
-        email:"",
-        password:"",
-        dob:"",
-        gender:"",
-    });
-
-    const handleChange =(e)=>{
-        const {name,value} = e.target;
-        setUserInfo({...userInfo, [name]:value});
-    };
-
-    const signup = async(userInfo) =>{
-        userInfo.appType = "Facebook";
-    
-    }
-
-   /* const[name, setName] = useState('');
-    const[email,setEmail] = useState('');*/
-
-
-
-
-
-    //set for Featching error:
-/*
-    const[submit, setSubmit] = useState('false');
-
-    const[error, setError] = useState('false');
-
-    // Handle NameChage:
-
-    const handleName =(e)=>{
-        setUserName(e.target.value);
-        setSubmit(false);
-
-
-    }
-
-    const hanldeSureName=(e)=>{
-        setSureName(e.target.value);
-        setSubmit(false);
-    }
-
-    const handleEmail =(e)=>{
-        setEmail(e.target.value);
-        setSubmit(false);
-
-    }
-
-    const hanldePassword =(e)=>{
-        setPassword(e.target.value);
-        setSubmit(false);
-
-    }
-
-    const handleGender =(e)=>{
-        setGender(e.target.value);
-        setSubmit(false);
-
-    }
-        
-    // Handle  the submission form;
-    const  handleSubmit =(e)=>{
-        e.preventDefault();
-        if(userName===" " || sureName=== " "|| email=== " " || password ===" " || gender ===" " ){
-            setError(true);
-
-        }
-        else{
-
-            setSubmit(true);
-            setError(false);
-
-        }
-
-    }
-
-    // Handle succes messgae;
-
-    
-*/
-
-
 const[userName, setUserName] = useState('');
 const[sureName , setSureName] = useState('');
 const[email, setEmail] = useState('');
 const[password, setPassword] = useState('');
-//const[gender, setGender] = useState('');
+
 
 const navigate = useNavigate();
+ 
+ const  ProjectId ='f104bi07c490';
 
-const submitform =()=>{
-    
-   
-    
+ 
 
-     fetch("https://academics.newtonschool.co/api/v1/user/signup",
-        {
-            method:"POST",
-            headers:{
-                "Content-Type": "application/json",
-                projectId: "f104bi07c490",
+ const submitform =(e)=>{
+    e.preventDefault();
+    try{
+
+        fetch('https://academics.newtonschool.co/api/v1/user/signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'projectID': ProjectId ,
             },
-            body:JSON.stringify({
-                name: userName ,
-                sureName:sureName,
+            body: JSON.stringify({
+                name: userName,
+                sureName: sureName,
                 email: email,
                 password: password,
-               
-                appType: "facebook",
-            }),
+                appType: 'facebook'
+            })
         })
-        .then((res)=>{
-            if(res.status >= 400){
-                new Error("Invalid error");
-               
+        .then((response)=>response.json())
+        .then((data)=> {
+            if(data.status === 'success'){
+                console.log("SignUpRegisterData",data)
+                
+                alert('Register Successfully..!');
+                
+                navigate('/');
+            }else{
+                alert(data.message);
             }
-            return res.json();
-        })
-        .then((data) =>{
            
-            if(userName === '' && sureName ===''&& email=== '' && password ===''){
-                navigate('/SignUp');
-               }else{
-                localStorage.setItem("userDetails", JSON.stringify(data));
-                console.log("Success");
-                // alert('Registration Succesfully!');
-             navigate('/');
-                    }
-            
-        })
-        .catch((error)=>{
-            alert(error.message);
-            console.log('error', error);
-
         });
-
-        // function handleSignup(e){
-        //     e.preventDefault();
-        //     SignUp(userDetails);
-        // };
-        
-        //   if(userName === '' && sureName ===''&& email=== '' && password ===''){
-        //       navigate('/SignUp');
-        //   }else{
-        //     alert('Rejistartion SuccesFully!');
-        //    navigate('/Loginpage');
-        //   }
-
+    }catch(error){
+        alert(error.message);
+        console.log('Sign Up data', error);
     }
+ }
 
-    /* if(  submitform && userName !== " "&& sureName!==" " && email !== " "&& password !==" "){
-       // 
-        // alert("User register Successfully!");
-        navigate("/LoginPage");
-     }
-     else {
-        //alert("Please Fill all the detail!");
-         navigate("/SignUp");
-     }
-     */
-    
+ let RegisterDetils = JSON.parse(localStorage.getItem('userdetails'));
+ console.log(RegisterDetils);
 
 
     return(
@@ -221,13 +80,14 @@ const submitform =()=>{
                 </div>
                 <div className="signup-seperator"></div>
 
-                    <form>
+                    <form onSubmit={submitform}>
                     <div className="signup-fields">
                     <div className="signup-inputs">
                         <div className="hd_place">
                             <input type="text"
                              placeholder="First-Name"
                              id="firstname"
+                             minLength={4}
                              required
                              onChange={(e)=>setUserName(e.target.value)}
                             />
@@ -235,6 +95,7 @@ const submitform =()=>{
                             <input type="text" 
                             placeholder="Surename" 
                             id="sureName"
+                            minLength={4}
                             required
                             onChange={(e) =>setSureName(e.target.value)}
 
@@ -244,14 +105,14 @@ const submitform =()=>{
                         <input type="email"
                          placeholder="Mobile Number or email address"
                          id="email"
-                         pattern=".+@beststartupever\.com"
-                         required
+                        required
                          onChange={(e)=> setEmail(e.target.value)}
                          />
                         <input class="pass" 
                         type="password" 
                         placeholder="Password" 
                         id="password"
+                        minLength={4}
                         required 
                         onChange={(e)=>setPassword(e.target.value)}
                     />
@@ -329,7 +190,7 @@ const submitform =()=>{
                    <div class="singup-para" data-nocookies="1" id="u_c_r_Fa">
                     <p class="para">By clicking Sign Up, you agree to our <a href="/legal/terms/update" id="terms-link" target="_blank" rel="nofollow">Terms</a>, <a href="/about/privacy/update" id="privacy-link" target="_blank" rel="nofollow">Privacy Policy</a> and <a href="/policies/cookies/" id="cookie-use-link" target="_blank" rel="nofollow">Cookies Policy</a>. You may receive SMS notifications from us and can opt out at any time.</p>
                     </div>
-                  <button type="button" name="websubmit" id="signup-btn" onClick={submitform}>Sign Up</button>
+                  <button type="submit" name="websubmit" id="signup-btn" >Sign Up</button>
                 
                 </div>
 

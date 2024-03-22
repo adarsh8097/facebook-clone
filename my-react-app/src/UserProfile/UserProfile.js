@@ -1,33 +1,29 @@
-import React from "react";
-//import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
 import './UserProfile.css';
 import ThemeProvider from "../Theme/ThemeProvider";
 import { Link, useNavigate} from "react-router-dom";
-//  const navigate = Navigate;
- //import UserPost from 'SinglePost/UserPost';
- const userDetail = JSON.parse(localStorage.getItem("userDetails")|| "{}");
- console.log(userDetail);
- 
-// const logout=()=>{
-//     localStorage.removeItem('userDetails');
-//     // setLogin('false');
-//     alert('logut Successfully !');
-//      navigate('/LoginPage');
-//  }
+import { MyContext } from "../Context/Context";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+// const userDetail = JSON.parse(localStorage.getItem("userdetails")|| "{}");
+//     console.log(userDetail);
+//      let userName = userDetail.data;
+//      console.log("userName", userName);
 
 function UserProfile(){
-    //  const close =()=>{
-    //   //  document.getElementById('bt').style.display ='none';
-    //  }
-    //  const logout=()=>{
-    //     localStorage.removeItem('userDetails');
-    //     // setLogin('false');
-    //     alert('logut Successfully !');
-    //      navigate('/LoginPage');
-    //  }
-       const navigate = useNavigate();
+    const{userDetail,userToken,setUserDetail,setUserToken} = useContext(MyContext);
+    let userName = userDetail.name;
+    console.log("userDetails",userName);
+
+    const navigate = useNavigate();
       const logout=()=>{
-        localStorage.removeItem('userDetails');
+        
+        localStorage.removeItem('userdetails');
+        sessionStorage.removeItem('userTokens');
+        setUserDetail({});
+        setUserToken('');
+
         alert("LogOut Successfully...!");
         navigate('/');
 
@@ -35,36 +31,11 @@ function UserProfile(){
      
     return(
          <div>
-           {/* <div className="upc" id="myupc">
-                        <button className="btn1" onClick={close}> X </button>
-                        <button className="cblp">
-                        <div className="upc_section" >
-                            <div className=" dp_profile">
-                             <div id="img-preview"></div>
-                          <input type="file"  placeholder="choose" id="choose-file" />
-                          <label for="choose-file">Choose file</label>
-                        </div>
-                        <Link to="#">UserProfile</Link>
-                        </div>
-                        </button>
-                        <div className="upc_section" >
-                        <Link to="#">Setting</Link>
-                        </div>
-                        <div className="upc_section" >
-                        <Link to="#">Dispaly</Link>
-                        </div>
-                        <div className="upc_section" >
-                        <Link to="#">UserProfile</Link>
-                        </div>
-                        
-                        
-             </div> */}
-           
-
-             <div className="main_body" id="bt">
+            <ToastContainer/>
+           <div className="main_body" id="bt">
              
                <div className="body-T">
-             {/* <button className="btn1"  onClick={close}> X </button>*/}
+       
                 <div className="body-form" style={{transform:"translate X(0%)"}}  >
                 <div className="header-title">
                     <button className="btn-1">
@@ -72,9 +43,9 @@ function UserProfile(){
                         <div className="header-content-box">
                         <span className="header-text">
                             <div className="content-body">
-                                <img className="img-sum profileimg" src="images/images.jpg" alt="profile"/>
+                                <img className="img-sum profileimg" src="../images/images.jpg" alt="profile"/>
                                 <div className="test-body">
-                                   <span className="text-1">{userDetail.name}</span>
+                                   <p className="text-1">{userName}</p>
                                    <Link to="/UserProfileDetails"> <span className="text-2">See your profile</span></Link>
 
                                  </div>
@@ -93,7 +64,9 @@ function UserProfile(){
 
                         </button>
                         <div className="lmn">
-                            <span className="opq">Dispaly Preferences <ThemeProvider/> </span>
+                            <span className="opq">Dispaly Preferences 
+                            {/* <ThemeProvider/>  */}
+                            </span>
                         </div>
                         <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="22px" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M294.1 256L167 129c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.3 34 0L345 239c9.1 9.1 9.3 23.7.7 33.1L201.1 417c-4.7 4.7-10.9 7-17 7s-12.3-2.3-17-7c-9.4-9.4-9.4-24.6 0-33.9l127-127.1z"></path></svg>
                      </div>
