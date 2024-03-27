@@ -7,14 +7,9 @@
 }
 
 .login_wrapper{
-
  /* justify-content: space-evenly;  */
 justify-content: center;
 align-items: center;
-
-
-
-
 }
 
 .login_wrap{
@@ -33,17 +28,15 @@ align-items: center;
     width: 490px;
     margin: 25px auto;
 
-    
-
 }
 
 .login_1 span{
 
-    font-size: 24px;
-    line-height: 28px;
-    width: auto;
-    margin-left: 25px;
-
+    font-size: 22px;
+    line-height: 20px;
+    width: 20%;
+    margin-left: 5rem;
+    opacity: 0.5;
 
 }
 
@@ -85,6 +78,7 @@ align-items: center;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.4);
     margin-top:20px;
+
 }
 
 .login_2_wrap_button{

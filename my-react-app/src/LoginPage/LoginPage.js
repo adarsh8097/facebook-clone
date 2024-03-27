@@ -130,11 +130,13 @@ console.log(userToken)
                     <div className='login_1'>
                         <div className='fb-image'>
                         <img className='fb1' src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg"  alt='Facebooklogo'/>
-                        </div>
                         <span>
                            Facebook helps you connect and share 
-                            with the people in your life.
                         </span>
+                        <br></br>
+                        <span>with 
+                           the people in your life.</span>
+                        </div>
                     </div>
                     <div className='login_2'>
                         <div className='login_2_wrap'>

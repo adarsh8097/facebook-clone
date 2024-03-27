@@ -106,7 +106,7 @@ console.log("Commentdata",comment);
         {comment.map((item, index) => (
             <div key={index}>
             <div className="card w-50 mb-3 bg-dark border text-white ms-3" key={index} >
-                <div className="">Zone Devo</div>
+                <div className="">{post.author.name}</div>
                 <div className="ms-5">{item.content}</div>
                 
             </div>
