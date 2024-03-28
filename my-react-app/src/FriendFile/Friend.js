@@ -51,7 +51,7 @@ export default function MyFriend() {
         const updatedFriends = friends.filter(friend => friend.id !== id);
         setFriends(updatedFriends);
         localStorage.setItem("userFriend", JSON.stringify(updatedFriends));
-        toast.error("Request delete Successfully");
+        toast.error(" Friend Request delete Successfully");
     }
 
     return (
