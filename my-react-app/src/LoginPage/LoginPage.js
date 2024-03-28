@@ -15,8 +15,8 @@ const {setUserDetail,setUserToken,userDetail,userToken} = useContext(MyContext);
 
 
 const navigate = useNavigate();
-console.log(userDetail)
-console.log(userToken)
+console.log(userDetail);
+console.log(userToken);
 
 
 //    const LoginUp =async()=>{
@@ -64,6 +64,9 @@ console.log(userToken)
 // let RegisterDetils = JSON.parse(localStorage.getItem('userdetails'));
 //  console.log(RegisterDetils);
 
+   if(Object.keys(userToken).length !== 0){
+      navigate('/HomePage');
+   }
 
   const LoginUp =async(e)=>{
     e.preventDefault();

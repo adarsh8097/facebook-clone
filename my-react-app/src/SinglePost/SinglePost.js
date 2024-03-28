@@ -52,7 +52,7 @@ function handleAlert(){
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    backgroundColor: "rgba(0, 0, 0, 1)",
+                    backgroundColor: "rgba(0, 0, 0, 0.8)",
                     zIndex: 50,
                     margin: 0,
                     padding: 0,
@@ -110,23 +110,30 @@ function handleAlert(){
     <h2 className="mt-3">Comments</h2>
         {comment.map((item, index) => (
             <div key={index}>
-            <div className="card w-50 mb-3 bg-dark border text-white ms-3" key={index} >
-                <div className="">{userDetail.name}</div>
+            <div className="d-flex">
+
+                <div style={{ marginRight: "5px" }}>
+                                        {post.author.profileImage ? <img src={post.author.profileImage} alt="profile" style={{ width: "15px", height: "15px", borderRadius: "100%" }} /> : <CgProfile style={{ fontSize: "22px", borderRadius: "100%" }} />}
+                 </div>
+                <div className="card w-50 mb-3 bg-light border text-dark " key={index} >
+            
+                <div className="" style={{fontWeight:"bold"}}>{userDetail.name}</div>
                 <div className="ms-5">{item.content}</div>
                 
-            </div>
-                     <div className="d-flex justify-content-around w-50">
-                                                <p style={{fontSize:'12px',opacity:"0.5" ,cursor:"pointer"}}>Like</p>
-                                                <p style={{fontSize:'12px',opacity:"0.5",cursor:"pointer"}}>reply</p>
-                                                <p style={{fontSize:'12px',opacity:"0.5"}}>
-                                                {moment(post.createdAt).format('Do')}
-                                                </p>
+               </div>
+             </div>
+                     <div className="d-flex justify-content-around w-50 " style={{marginLeft:"20px"}}>
+                                 <p style={{fontSize:'12px',opacity:"0.5" ,cursor:"pointer"}}>Like</p>
+                               <p style={{fontSize:'12px',opacity:"0.5",cursor:"pointer"}}>reply</p>
+                             <p style={{fontSize:'12px',opacity:"0.5"}}>
+                           {moment(post.createdAt).format('Do')}
+                          </p>
                                                 {/* <p><FaEdit /></p>
                                                 <p><MdDelete/></p> */}
-                                             </div>
+                     </div>
              
                                            
-                                        </div>
+                         </div>
                                     ))}
                                     </div>
                                     <form className="sticky-bottom mb-0 bg-primary"  style={{ marginBottom:"0" }} 
