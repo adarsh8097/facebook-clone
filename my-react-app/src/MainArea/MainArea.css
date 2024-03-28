@@ -624,23 +624,6 @@ input::placeholder{
 
 
 
-/*
-.Online {
-    position: absolute;
-    top: 9%;
-    left: 70%;
-    transform: translateX(-50%);
-}
-.star {
-    background-color: rgb(47, 243, 80);
-    font-size: 0.7rem;
-    color: white;
-    padding: 4px 6px;
-    text-align: center;
-    display: inline-block;
-    border-radius: 100%;
-}
-*/
 
 @media only screen and (max-width: 600px) {
     .Main{
@@ -829,7 +812,9 @@ input::placeholder{
         font-size: 1.5rem;
         height: 20rem;
         justify-content: flex-start;
-        margin-left: 30%;
+        margin-left: 20%;
+        padding: 20px;
+        padding-top:10px;
     }
     .Plus{
         border-radius: 100%;
@@ -913,10 +898,10 @@ input::placeholder{
     .Post{
         margin-top: 10px;
         display: flex;
-        width: 100%;
+        width:100%;
         justify-content: start;
         background-color: white;
-        margin-left: 50px;
+        margin-left: 10px;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px;
     
         
@@ -1179,7 +1164,7 @@ input::placeholder{
     .Call{
     
        width: 100%;
-       margin-left: 50px;
+       margin-left: 10px;
        border-radius: 2rem;
        box-shadow: rgba(0, 0, 0, 0.2) ;   
     }
@@ -1287,3 +1272,4 @@ input::placeholder{
         
     }
 }
+

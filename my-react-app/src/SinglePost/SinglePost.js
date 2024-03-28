@@ -8,12 +8,14 @@ import AllPost from "../AllPost/AllPots";
 import { MyContext } from "../Context/Context";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 
 const SinglePost = ({ post, onClose }) => {
- const{UpvotingCount,CommentPost,comment,CreateComment,createComment} = useContext(MyContext);
+ const{UpvotingCount,CommentPost,comment,CreateComment,createComment,userDetail} = useContext(MyContext);
  const[likes , setlike ] = useState(false);
  const [content,setContent] = useState('');
  const[message , setMessage] = useState(post.commentCount);
@@ -36,8 +38,11 @@ const SinglePost = ({ post, onClose }) => {
     }
 };
   
-
-console.log("Commentdata",comment);
+function handleAlert(){
+    toast.error("Comming soon");
+  }
+// console.log("Commentdata",comment);
+// console.log("UserDetails",userDetail.name);
     return (
         <>
             {post &&
@@ -69,7 +74,7 @@ console.log("Commentdata",comment);
            
                                         {/* Add additional user details here */}
                                     </div>
-                                    <div className="">
+                                    <div className="" onClick={handleAlert}>
                                         <MdMoreHoriz fontSize="2.5rem" cursor="pointer" />
 
                                     </div>
@@ -93,7 +98,7 @@ console.log("Commentdata",comment);
                                     <FaCommentAlt color="white" fontSize="2.5rem" className="me-1"/>
                                     {message}
                                 </div>
-                                <div className="Like">
+                                <div className="Like" onClick={handleAlert}>
                                     <FaRegShareSquare color="white" fontSize="2.5rem" className="me-1"/> Share
                                 </div>
                                  </div>
@@ -106,7 +111,7 @@ console.log("Commentdata",comment);
         {comment.map((item, index) => (
             <div key={index}>
             <div className="card w-50 mb-3 bg-dark border text-white ms-3" key={index} >
-                <div className="">{post.author.name}</div>
+                <div className="">{userDetail.name}</div>
                 <div className="ms-5">{item.content}</div>
                 
             </div>
@@ -123,15 +128,15 @@ console.log("Commentdata",comment);
                                            
                                         </div>
                                     ))}
-    </div>
-    <form className="sticky-bottom mb-0 bg-primary"  style={{ marginBottom:"0" }} 
-       onSubmit={handleCommentSubmit}>
-        <div style={{ position: 'relative', width: '100%' }}>
-            <textarea id="commentInput" className="form-control border bg-dark text-white fs-2" placeholder="Write a comment..." type="text" value={content} onChange={(e) => setContent(e.target.value)} />
-            <button type="submit" className="btn btn-primary" style={{ position: 'absolute', right: '5px', bottom: '5px' }}>Send</button>
-        </div>
-    </form>
-</div>
+                                    </div>
+                                    <form className="sticky-bottom mb-0 bg-primary"  style={{ marginBottom:"0" }} 
+                                    onSubmit={handleCommentSubmit}>
+                                        <div style={{ position: 'relative', width: '100%' }}>
+                                            <textarea id="commentInput" className="form-control border bg-dark text-white fs-2" placeholder="Write a comment..." type="text" value={content} onChange={(e) => setContent(e.target.value)} />
+                                            <button type="submit" className="btn btn-primary" style={{ position: 'absolute', right: '5px', bottom: '5px' }}>Send</button>
+                                        </div>
+                                    </form>
+                                </div>
 
                             </div>
                         </div>

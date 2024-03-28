@@ -55,7 +55,7 @@ function HeaderArea() {
                     </div>
                     <div className="third-header">
                         <div className="plus">
-                            <FaPlusCircle fontSize="2rem" color="black" />
+                           <Link to="/HomePage"> <FaPlusCircle fontSize="2rem" color="black" /></Link>
                         </div>
                         <div className="plus">
                             <FaFacebookMessenger fontSize="2rem" onClick={onmesg} />

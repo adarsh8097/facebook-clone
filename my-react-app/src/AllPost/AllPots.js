@@ -108,7 +108,7 @@ const AllPost = () => {
                 <FaCommentAlt color="grey"fontSize="2rem" />
                  {post.commentCount}
             </div>
-            <div className="Like" >
+            <div className="Like" onClick={handleAlert} >
                 <FaRegShareSquare color="grey" fontSize="2rem"/> Share
             </div>
             
