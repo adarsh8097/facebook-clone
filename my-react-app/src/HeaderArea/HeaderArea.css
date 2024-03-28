@@ -203,7 +203,8 @@ input::placeholder{
     
     .HomePage{
         display: grid;
-    
+        width: 100%;
+
     }
     
     .header{
@@ -223,7 +224,7 @@ input::placeholder{
     
     .first-header{
         display: flex;
-    
+        width: 20%;
     }
     
     .Search{
@@ -235,7 +236,7 @@ input::placeholder{
         padding: 20px 20px;
         margin: 20px 7px;
        outline-width: 50%;
-        display: none;
+        /* display: none; */
     }
     
     input[type = Search]{
@@ -260,11 +261,12 @@ input::placeholder{
     .middle-header{
         display: flex;
         align-items: center;
-        flex: 0%;
+        /* flex: 0%; */
         justify-content:space-evenly;
-        width:10px;
-        margin-right:10px;
-      /*  z-index: 1;*/
+        /* width:10px; */
+        width: 30%;
+        /* margin-right:10px; */
+       z-index: 1;
     
     }
     .goNsGa {
@@ -409,7 +411,7 @@ input::placeholder{
     
     .first-header{
         display: flex;
-    
+        width: 30%;
     }
     
     .Search{
@@ -418,16 +420,16 @@ input::placeholder{
         background-color: #f0f2f5;
         border-radius: 2rem;
         height: 1.8rem;
-        padding: 20px 20px;
-        margin: 20px 7px;
-       outline-width: 50%;
-       display: none;
+        padding: 20px 10px;
+        margin: 20px 0px;
+       outline-width: 20%;
+       /* display: none; */
     
     }
     
     input[type = Search]{
-        width: 100%;
-        padding: 12px 22px;
+        width: 50%;
+        padding: 12px 0px;
         margin: 2px 0px;
         align-items: center;
         box-sizing: border-box;
@@ -440,7 +442,7 @@ input::placeholder{
     
     input::placeholder{
         font-size: 1.8rem;
-        font-weight: 200;
+        font-weight: 100;
     }
     
     .middle-header{
@@ -482,13 +484,14 @@ input::placeholder{
     .third-header{
         display: flex;
         align-items: center;
+        /* display: none; */
         
        
     }
     
     .plus{
         border-radius: 100%;
-        display: flex;
+        /* display: flex; */
         -webkit-box-align: center;
         align-items: center;
         -webkit-box-pack: center;
@@ -501,7 +504,7 @@ input::placeholder{
         height: 40px;
         color: rgb(30, 30, 30);
         position: relative;
-      
+        display: none;
     }
     
     
