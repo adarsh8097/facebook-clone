@@ -113,7 +113,7 @@ function handleAlert(){
             <div className="d-flex">
 
                 <div style={{ marginRight: "5px" }}>
-                                        {post.author.profileImage ? <img src={post.author.profileImage} alt="profile" style={{ width: "15px", height: "15px", borderRadius: "100%" }} /> : <CgProfile style={{ fontSize: "22px", borderRadius: "100%" }} />}
+                     <CgProfile style={{ fontSize: "22px", borderRadius: "100%" }} />
                  </div>
                 <div className="card w-50 mb-3 bg-light border text-dark " key={index} >
             
