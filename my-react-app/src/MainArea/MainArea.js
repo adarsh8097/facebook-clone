@@ -288,7 +288,7 @@
                                 </div>  
                                 <div className="icone" onClick={onalert}>
                                 <FaGrin fontSize="2.5rem" color="orange" />
-                                <div className="Fm">Felling/activity</div> 
+                                {/* <div className="Fm">Felling/activity</div>  */}
                                 </div>  
                             </div>
                         </div>
