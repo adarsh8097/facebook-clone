@@ -1,19 +1,19 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useEffect } from "react";
 import "./HeaderArea.css";
 import { AiFillHome, AiOutlineSearch, AiOutlineWallet } from "react-icons/ai";
 import { MdOndemandVideo } from "react-icons/md";
 import { FaBell, FaFacebookMessenger, FaPlusCircle, FaRegFlag, FaUsers } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink,withRouter} from "react-router-dom";
 import UserProfile from "../UserProfile/UserProfile";
 import { MyContext } from "../Context/Context";
 import SearchItem from "./SearchItem";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-function HeaderArea() {
+import {useNavigate} from 'react-router-dom';
+function HeaderArea({history }) {
     const [isClicked, setIsClicked] = useState(false);
-    const { searchItem, setSearchItem, searchClicked,activeItembutton,setActiveButton } = useContext(MyContext);
-
+    const { SearchPost,searchItem, setSearchItem, searchClicked,activeItembutton,setActiveButton,setSearchClicked } = useContext(MyContext);
+    const navigate = useNavigate();
     const openbtn = () => {
         setIsClicked(!isClicked);
     };
@@ -21,6 +21,18 @@ function HeaderArea() {
     function onmesg() {
         toast.error("Network issue can't uploaded your data please try after sometime ");
     }
+
+    // useEffect(() => {
+    //     const unlisten = history.listen(() => {
+    //         setIsClicked(false); // Close the modal when navigating to another page
+    //     });
+    //     return () => {
+    //         unlisten(); // Cleanup the listener on component unmount
+    //     };
+    // }, [history]);
+     function handleCloseModal(){
+            setSearchClicked(false);
+     }
 
     return (
         <nav>
@@ -33,10 +45,11 @@ function HeaderArea() {
 
                         <div className="Search">
                             <AiOutlineSearch fontSize="2.3rem" style={{ height: "4rem" }} />
-                            <input placeholder="Search Facebook" type="Search" value={searchItem} onChange={(e) => setSearchItem(e.target.value)} />
+                            <input placeholder="Search Facebook" type="Search" value={searchItem} onChange={(e) => setSearchItem(e.target.value)} required/>
                         </div>
                     </div>
-                    <div className="middle-header">
+                    <div className="middle-header" onClick={handleCloseModal}>
+                      
                         <NavLink className="Icon navbar__link " to="/HomePage" style={{ borderBottom: activeItembutton === "1" ? "2px solid #007bff" : "none" }} onClick={()=>setActiveButton("1")}>
                             <AiFillHome fontSize="3rem" color="#1877f2" />
                         </NavLink>
@@ -57,16 +70,16 @@ function HeaderArea() {
                         <div className="plus">
                            <Link to="/HomePage"> <FaPlusCircle fontSize="2rem" color="black" /></Link>
                         </div>
-                        <div className="plus">
-                            <FaFacebookMessenger fontSize="2rem" onClick={onmesg} />
+                        <div className="plus"  onClick={onmesg}>
+                            <FaFacebookMessenger fontSize="2rem" />
                             <div className="hoFBBP goNsGa">20</div>
                         </div>
-                        <div className="plus">
-                            <FaBell fontSize="2rem" onClick={onmesg} />
+                        <div className="plus" onClick={onmesg}>
+                            <FaBell fontSize="2rem" />
                             <div className="hoFBBP goNsGa">40</div>
                         </div>
-                        <div className="pluss">
-                            <button id="but1" onClick={openbtn}>
+                        <div className="pluss" onClick={openbtn}>
+                            <button id="but1">
                                 <img className="imf" src="/images/images.jpg" alt="dp" style={{ height: "45px" }} />
                             </button>
                         </div>
@@ -77,7 +90,12 @@ function HeaderArea() {
                         )}
                     </div>
                 </div>
-                {searchClicked && <SearchItem />}
+                {searchClicked && (
+                        <div>
+                        <SearchItem />
+                        </div>
+                     
+                )}
             </div>
         </nav>
     );

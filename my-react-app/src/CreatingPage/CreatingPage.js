@@ -64,7 +64,7 @@ export default function MyPage(){
         
             <form onSubmit={CreatePage}>
                 <div className="card w-100 p-3 m-1 mt-5 p-5" style={{height:"auto"}}>
-                <div className="form-group mt-4">
+                <div className="form-group mt-4 ">
                     <label htmlFor="exampleInputEmail1" className="p-3" style={{fontSize:"25px",fontWeight:"bold"}}>Create a Page</label>
                      <div>
                         <p>Your Page is where people go to learn more about you. Make sure that yours has all of the information they may need.</p>
@@ -80,12 +80,13 @@ export default function MyPage(){
                         onChange={(e) => setPostTitle(e.target.value)}
                         style={{fontSize:"15px"}}
                     />
+                   
+                </div>
+                <div className="form-group ">
+                    <label htmlFor="exampleInputPassword1"></label>
                     <small id="emailHelp" className="form-text text-muted">
                     Use the name of your business, brand or organisation, or a name that helps explain your Page.
                     </small>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="exampleInputPassword1"></label>
 
                     <input 
                         type="text" 
@@ -112,7 +113,7 @@ export default function MyPage(){
                     />
                 </div>
                 Tell people a little about what you do.
-                <button type="submit" className="btn btn-primary p-4 m-2"   style={{fontSize:"15px"}}>Submit</button>
+                <button type="submit" className="btn btn-primary p-4 m-5"   style={{fontSize:"15px"}}>Submit</button>
                 </div>
             </form>
         </div>

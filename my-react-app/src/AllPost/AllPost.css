@@ -22,6 +22,10 @@
     gap:5px;
 }
 
+.liked{
+    color: blue;
+}
+
 @media only screen and (max-width: 600px) {
    
     /* .Posted{

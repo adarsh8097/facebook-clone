@@ -19,10 +19,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const AllPost = () => {
     const [postDetail, setPostDetails] = useState([]);
-    // const[ispost, setIsPost] = useState(false);
+    const[isLiked, setIsLiked] = useState(false);
     const [selectedPost, setSelectedPost] = useState(null);
+   
+
     const{ setPostUser,UpvotingCount,likes,createComment,editPost} = useContext(MyContext);
 
+   
 
    console.log("likesCount",likes);
     useEffect(() => {
@@ -55,8 +58,16 @@ const AllPost = () => {
 
   // console.log("postDetailPeoduct",postUser);
    function handleAlert(){
-     toast.error("Comming soon");
+     toast.error("Coming soon");
    }
+
+   const handleLike = ()=>{
+    // UpvotingCount(postId);
+    setIsLiked(!isLiked);
+   }
+
+   
+
     return (
       <div>
         <ToastContainer/>
@@ -101,9 +112,14 @@ const AllPost = () => {
         
 
         <div className="Comment">
-            <div className="Like" likeCount={post.likeCount}  liked={post.liked} onClick={(e)=>UpvotingCount(post._id)}>
-             <FaRegThumbsUp color="grey" fontSize="2rem"/> {post.likeCount}
-            </div>
+            {/* <div className="Like" likeCount={post.likeCount}  liked={post.liked} onClick={(e)=>UpvotingCount(post._id)}>
+             <FaRegThumbsUp color={post.liked ? 'blue' : 'grey'} fontSize="2rem" onClick={handleLike} /> 
+               {isLiked ? `${post.likeCount-1}`: `${post.likeCount}`}
+            </div> */}
+            <div className="Like" likeCount={post.likeCount} liked={post.liked} onClick={()=>UpvotingCount(post._id)}>
+                            <FaRegThumbsUp color={post.isLiked ? 'blue':'grey'} fontSize="2rem"/>
+                            {post.isLiked ? `${post.likeCount}`: `${post.likeCount}`}
+                </div>
             <div className="Like" onClick={(e) => handlePostClick(post)}>
                 <FaCommentAlt color="grey"fontSize="2rem" />
                  {post.commentCount}

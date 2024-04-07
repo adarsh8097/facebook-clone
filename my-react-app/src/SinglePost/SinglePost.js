@@ -39,7 +39,7 @@ const SinglePost = ({ post, onClose }) => {
 };
   
 function handleAlert(){
-    toast.error("Comming soon");
+    toast.error("Coming soon");
   }
 // console.log("Commentdata",comment);
 // console.log("UserDetails",userDetail.name);
@@ -52,15 +52,16 @@ function handleAlert(){
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    backgroundColor: "rgba(0, 0, 0, 0.8)",
+                    backgroundColor: "rgba(0, 0, 0, 0.9)",
                     zIndex: 50,
                     margin: 0,
                     padding: 0,
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center"
+                    justifyContent: "center",
+                    zIndex:100
                 }}>
-                    <div className="modal-content relative" style={{ padding: "20px", borderRadius: "5px", width: "80%", maxWidth: "900px" }}>
+                    <div className="modal-content relative" style={{ padding: "20px", borderRadius: "5px", width: "80%", maxWidth: "900px" }}  onClick={(e) => e.stopPropagation()}>
                         <button className="btn btn-danger px-2 py-3" style={{ borderRadius:"50%" ,position: "absolute", top: 0, right: 0, width: "4rem" }} onClick={onClose}>X</button>
                         <div  className=" fluid-container row mt-5">
                             <div className="col-md-8">
@@ -103,7 +104,7 @@ function handleAlert(){
                                 </div>
                                  </div>
                              </div>
-    <div className="relative fluid-container border text-white d-flex flex-column justify-content-between" style={{ height: "90%", overflowY: 'auto' }}>
+     <div className="relative fluid-container border text-white d-flex flex-column justify-content-between" style={{ height: "90%", overflowY: 'auto' }}>
    
     
     <div className="fluid-container"  >

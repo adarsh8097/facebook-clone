@@ -182,7 +182,7 @@ export const MyContextProvider =({children})=>{
     const SearchPost =(author)=>{
       
         try{
-            fetch(`https://academics.newtonschool.co/api/v1/facebook/post?filter={"content":"${author}"}`,{
+            fetch(`https://academics.newtonschool.co/api/v1/facebook/post?search={"content":"${author}"}`,{
                  method:"GET",
                 headers: {
                     'projectID': projectID,
@@ -211,7 +211,7 @@ export const MyContextProvider =({children})=>{
     return(
         <MyContext.Provider value={{postuser,setPostUser,likes,setLikes,comment,setComment,UpvotingCount,CommentPost,
         CreateComment,createComment,UpdateComment,CreatingPost,createPost,projectID,userDetail,
-        userToken,SearchPost,searchItemResult,searchClicked, setSearchItem,searchItem,setEditPost,editPost,activeItembutton,setActiveButton,setUserDetail,setUserToken}}>
+        userToken,SearchPost,searchItemResult,searchClicked, setSearchItem,searchItem,setEditPost,editPost,activeItembutton,setActiveButton,setUserDetail,setUserToken,setSearchClicked}}>
             {children}
         </MyContext.Provider>
     );

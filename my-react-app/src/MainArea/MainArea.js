@@ -81,7 +81,7 @@
         };
 
         function onalert(){
-           toast.error("comming soon");
+           toast.error("coming soon");
         }
 
         function onupdate(){
@@ -134,8 +134,9 @@
         <div className="Main">
             <div className="Rside position-fixed">
             <div className="Profile">
-            <Link to="/UserProfileDetails"> <img src="/images/images.jpg" alt="dp" style={{height:"60px", width:"60px",padding:"1rem",borderRadius: "50%"}}/>  </Link> 
-                    <span>{userDetail.name}</span>
+            <Link to={`/AllPost/${userDetail._id}`}> <img src="/images/images.jpg" alt="dp" style={{height:"60px", width:"60px",padding:"1rem",borderRadius: "50%"}}/>  
+                    <span style={{color:'black'}}>{userDetail.name}</span>
+                    </Link> 
                 </div>
                 <div className="Pro d-flex" >
                    <Link to="/Myfriend"> <FaUserFriends color="blue" fontSize="2rem" /><div style={{color:"black",flexDirection:"column",marginTop:"-15px",marginLeft:"30px"}}>Friends</div>
@@ -161,8 +162,8 @@
                 </div>
             
             
-                <div className="Pro">
-                    <FaAngleDown color="blue" fontSize="2rem" onClick={onshow} />
+                <div className="Pro"onClick={onshow}>
+                    <FaAngleDown color="blue" fontSize="2rem"  />
                     <div>See More</div>
                 </div>
             
@@ -184,8 +185,8 @@
                     Java Developer
                 </div>
 
-                <div className="Pross">
-                    <FaAngleDown color="blue" fontSize="2rem"  onClick={onshow}/>
+                <div className="Pross" onClick={onshow}>
+                    <FaAngleDown color="blue" fontSize="2rem" />
                     <div>See More</div>
                 </div>
             </div> 

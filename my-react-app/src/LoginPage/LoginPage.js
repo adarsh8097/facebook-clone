@@ -120,7 +120,9 @@ console.log(userToken);
      }
   }
    
-
+function alert(){
+    toast.error('Coming soon');
+}
 
       
 
@@ -162,7 +164,7 @@ console.log(userToken);
 
                             </form>
                             
-                            <Link to="/forgot" className='forgot-pass'>Forgotten password ?</Link>
+                            <Link to="#" className='forgot-pass' onClick={alert}>Forgotten password ?</Link>
                         
                         <div className='sign_spliter'></div>
                       <Link to="/SignUp"><button className='blue_btn2 open-signup'>Create Account</button> </Link>
