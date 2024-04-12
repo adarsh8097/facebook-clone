@@ -131,7 +131,7 @@
         return(
             <>
             {/* <ToastContainer/> */}
-        <div className="Main">
+        <div className="Main container">
             <div className="Rside position-fixed">
             <div className="Profile">
             <Link to={`/AllPost/${userDetail._id}`}> <img src="/images/images.jpg" alt="dp" style={{height:"60px", width:"60px",padding:"1rem",borderRadius: "50%"}}/>  
@@ -190,7 +190,7 @@
                     <div>See More</div>
                 </div>
             </div> 
-            
+        
             <div className="MainArea">
                 <div className="addStory">
                 <div className="zoomStory">
@@ -251,7 +251,7 @@
                         
                         </div>
                     </div>
-                    <div className="zoomStory">
+                    <div className="zoomStory col-sm-4">
                     <div className="Story">
                         <img src="data:image/jpeg;base64,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" alt="IMG" style={{height:"60px", width:"50px",borderRadius:"60%"}}/>
                         <br></br>
@@ -266,16 +266,55 @@
                     </div>
               </div>
                 
-                <div className="message">
-                    <div className="text" >
+    {/* <div className="container">
+      <div className="text">
+        <div className="">
+            <div className="col-md-12 col-sm-12 col-12">
+                <div className="Post">
+                    <img src="/images/images.jpg" alt="PIC" className="img-fluid"/>
+                    <button className="abc1" onClick={model}> 
+                        <span className="hd1">What's on your mind, <span>{userName}</span>?</span>
+                    </button>
+                </div>
+              
+               
+            </div>
+            <div className="col-md-12 col-sm-12 col-12">
+                <div className="Call">
+                    <div className="ico column">
+                        <div className="icone" onClick={onalert}>
+                            <MdVideoCall fontSize="3rem" color="red" />
+                            <div className="Fm">Live Video</div>  
+                        </div>
+                        <div className="icone" onClick={onalert}>
+                            <AiFillFileImage fontSize="2.5rem" color="green" />
+                            <div className="Fm">Photo/Video</div>
+                        </div>  
+                        <div className="icone" onClick={onalert}>
+                            <FaGrin fontSize="2.5rem" color="orange" />
+                            <div className="Fm">Feeling/activity</div> 
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>  */}
+    {/* <div>
+        <AllPost/>
+    </div> 
+        </div> */}
+
+
+
+               <div className="message" style={{width:"80%"}}>
+                    <div className="text postecontainer">
                         <div className="Post">
                             <img src ="/images/images.jpg" alt="PIC"/>
                           <button  className="abc1" onClick={model}> 
                             <span className="hd1">What's your mind, <span>{userName}</span>?</span>
                             </button>
-                        
-
-                        </div>
+                         </div>
                         <div className="dulo" style={{border:"1px solid rgba(0,0,0,0.2)" ,width:"80%" , marginLeft:"5rem"}}></div> 
                         <div className="Call">
                             <div className="ico">
@@ -289,19 +328,19 @@
                                 </div>  
                                 <div className="icone" onClick={onalert}>
                                 <FaGrin fontSize="2.5rem" color="orange" />
-                                {/* <div className="Fm">Felling/activity</div>  */}
-                                </div>  
+                                <div className="Fm">Felling activity</div>                              
+                                 </div>  
                             </div>
                         </div>
-                    
-
-                    <AllPost/>
-                    
-                    
-                    </div>
+                        
+                   </div>
+                   <div className="postContentitem">
+            <AllPost/>
+                  </div>
+                   </div> 
                 
-                </div> 
-            </div> 
+                
+                </div>
 
             {openModel &&  <div className="model" data-tested="model" id="mod1" >
                 <div className="model-outer">

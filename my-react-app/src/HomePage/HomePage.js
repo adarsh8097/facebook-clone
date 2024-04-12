@@ -32,7 +32,7 @@ function HomePage() {
   return (
     <div>
       <HeaderArea />
-      <MainArea />
+      <MainArea/>
     </div>
   );
 }

@@ -60,9 +60,9 @@ export default function MyPage(){
 
     
      return (
-        <div>
+        <>
         
-            <form onSubmit={CreatePage}>
+            <form className="container-fluid" onSubmit={CreatePage}>
                 <div className="card w-100 p-3 m-1 mt-5 p-5" style={{height:"auto"}}>
                 <div className="form-group mt-4 ">
                     <label htmlFor="exampleInputEmail1" className="p-3" style={{fontSize:"25px",fontWeight:"bold"}}>Create a Page</label>
@@ -116,7 +116,7 @@ export default function MyPage(){
                 <button type="submit" className="btn btn-primary p-4 m-5"   style={{fontSize:"15px"}}>Submit</button>
                 </div>
             </form>
-        </div>
+        </>
     );
     
 }

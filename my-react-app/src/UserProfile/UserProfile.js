@@ -24,7 +24,7 @@ function UserProfile(){
         setUserDetail({});
         setUserToken('');
 
-        alert("LogOut Successfully...!");
+        alert("LogOut Successfully...!"); 
         navigate('/');
 
       }
@@ -35,6 +35,7 @@ function UserProfile(){
     return(
          <div>
             <ToastContainer/>
+            
            <div className="main_body" id="bt">
              
                <div className="body-T">

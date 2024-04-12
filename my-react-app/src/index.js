@@ -5,7 +5,7 @@ import App from './App';
 //import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import { MyContextProvider } from './Context/Context';
-
+import { ToastContainer } from 'react-toastify';
 // Class Component
 //const root = ReactDOM.createRoot(document.getElementById('root'));
 ReactDOM.render(
@@ -14,6 +14,7 @@ ReactDOM.render(
    
   <BrowserRouter>
    <MyContextProvider>
+    <ToastContainer/>
     <App />
     </MyContextProvider>
     </BrowserRouter>

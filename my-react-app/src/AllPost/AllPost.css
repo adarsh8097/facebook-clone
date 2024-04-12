@@ -5,10 +5,24 @@
    
 
 }
+
+.Posted{
+    display: grid;
+    height: 80%;
+    width: 80%;
+    align-items: flex-start;
+    background-color: white;
+    margin-left: 60px;
+    margin-top: 29px;
+    justify-content: center;
+    border-radius: 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px; */
+    
+}
 .Posted{
     height: auto;
     width: 80%;
-    padding: 20px;
+    padding: 10px;
  }
 
 .PostImg{
@@ -26,6 +40,15 @@
     color: blue;
 }
 
+.poster{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   /* gap: 3rem; */
+ 
+}
+
+
 @media only screen and (max-width: 600px) {
    
     /* .Posted{
@@ -35,11 +58,11 @@
      } */
 
      .Posted{
-        height: 100%;
+        height: 80%;
         width: 100%;
-        /* padding: 20px; */
-        margin-left: 10px;
-        justify-content: center;
+         align-items: center;
+        justify-content:center;
+        
 
      }
      .PostImg > img{

@@ -1,5 +1,5 @@
 import React,{useState,createContext,useContext, useEffect} from "react";
-
+import {toast} from 'react-toastify';
  export const MyContext = createContext();
 //  export const userDetail = JSON.parse(localStorage.getItem("userdetails")|| "{}");
 //  export const userToken = JSON.parse(sessionStorage.getItem("userTokens")|| "{}");
@@ -20,6 +20,9 @@ export const MyContextProvider =({children})=>{
     const[searchItem , setSearchItem] = useState('');
     const[editPost , setEditPost] = useState(false); 
     const[activeItembutton , setActiveButton] = useState("1");
+    const[isdeletePost , setDeltePost] = useState([]);
+    const [open, setOpen] = React.useState(false);
+    
     useEffect(() => {
         // Initialize user detail and token from local storage only once when component mounts
         const storedUserDetail = JSON.parse(localStorage.getItem("userdetails")) || {};
@@ -182,11 +185,13 @@ export const MyContextProvider =({children})=>{
     const SearchPost =(author)=>{
       
         try{
-            fetch(`https://academics.newtonschool.co/api/v1/facebook/post?search={"content":"${author}"}`,{
+            //https://academics.newtonschool.co/api/v1/facebook/user?search
+            //fetch(`https://academics.newtonschool.co/api/v1/facebook/post?search={"name":"${author}"}`,{
+            fetch(`https://academics.newtonschool.co/api/v1/facebook/post?search={"author.name":"${author}","content":"${author}"}`,{
                  method:"GET",
                 headers: {
                     'projectID': projectID,
-
+                    'Authorization': `Bearer ${userToken}`,
                 }
             })
             .then((response)=>response.json())
@@ -207,11 +212,48 @@ export const MyContextProvider =({children})=>{
 
     }
 
+ 
+    
+    const deletePost = (id) => {
+        try {
+            if(window.confirm("are you sure you want to delete?")){
+            fetch(`https://academics.newtonschool.co/api/v1/facebook/post/${id}`, {
+                method: "DELETE",
+                headers: {
+                    'Authorization': `Bearer ${userToken}`,
+                    'projectID': projectID,
+                },
+            })
+            .then(res => {
+                // No need to parse JSON here since there might not be any response
+                if (!res.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                // Optionally handle success here
+                console.log("Post deleted successfully");
+                setDeltePost((prev)=>!prev);
+                toast.success('Post deleted successfully');
+            })
+            .catch(error => {
+                // Handle errors here
+                toast.error(error.message);
+                console.error('There was a problem with the delete operation:', error);
+            });
+        }
+        } catch (error) {
+            // Catch any synchronous errors
+            toast.error(error.message);
+            console.error('An error occurred during the delete operation:', error);
+        }
+    }
+    
+
+
 
     return(
         <MyContext.Provider value={{postuser,setPostUser,likes,setLikes,comment,setComment,UpvotingCount,CommentPost,
         CreateComment,createComment,UpdateComment,CreatingPost,createPost,projectID,userDetail,
-        userToken,SearchPost,searchItemResult,searchClicked, setSearchItem,searchItem,setEditPost,editPost,activeItembutton,setActiveButton,setUserDetail,setUserToken,setSearchClicked}}>
+        userToken,SearchPost,searchItemResult,searchClicked, setSearchItem,searchItem,setEditPost,editPost,activeItembutton,setActiveButton,setUserDetail,setUserToken,setSearchClicked,isdeletePost , setDeltePost,deletePost,open, setOpen}}>
             {children}
         </MyContext.Provider>
     );

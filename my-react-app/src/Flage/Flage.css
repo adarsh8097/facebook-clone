@@ -2,10 +2,10 @@
 .Mypagedata{
    
     /* position: fixed; */
-    z-index: 10;
+    z-index: 50;
     position: fixed;
     /* margin: 10px; */
-    margin-top: 10px;
+    margin-top: 0px;
     height: auto;
     width: 26%;
 
@@ -13,18 +13,47 @@
 
 
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width:767px){
     .Mypagedata{
-   
-        /* position: fixed; */
         z-index: 10;
-        position: fixed;
-        margin-bottom: 4rem;
+        position: sticky;
+        margin-bottom: 2rem;
         height: auto;
         width: 100%;
         /* padding: 20px; */
-        
-        
-    
+        /* background-color: red; */
+       
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1023px){
+    .Mypagedata{
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        position: sticky;
+        margin-bottom: 4rem;
+        height: auto;
+        width: 100%;
+        overflow-y: "scroll",
+        /* , width: "100%"  */
+       
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1200px) {
+    .Mypagedata {
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        position: sticky;
+        margin-bottom: 4rem;
+        height: auto;
+        width: 100%;
+        overflow-y: scroll; /* Changed from overflow-y: "scroll", */
+    }
+
+    .MyPage {
+        width: 100%;
     }
 }

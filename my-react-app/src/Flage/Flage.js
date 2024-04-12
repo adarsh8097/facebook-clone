@@ -38,9 +38,9 @@ const FlagePost = () => {
             <HeaderArea />
             <div className="flage">
                 {/* MyPage component fixed to the left side */}
-                <div className="MyPage w-50 col-sm-12 col-md-9 col-12 bg-light text-white height-auto" style={{zIndex:"0",marginTop:"2rem"}}>
-                   <div className="Mypagedata position-fixed "> 
-                   <MyPage />
+                <div className="MyPage w-50 col-sm-12 col-md-12 col-12 bg-light text-white height-auto " style={{zIndex:"0",marginTop:"2rem"}}>
+                   <div className="Mypagedata position-fixed"> 
+                   <MyPage style={{width:"100%"}}/>
                    </div>
                 </div>
 

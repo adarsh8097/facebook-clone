@@ -17,7 +17,7 @@ import { CgProfile } from "react-icons/cg";
         <>
         {/* <HeaderArea/> */}
         <div className="card card-container" style={{ width: "300px", marginLeft: "12rem", justifyContent: "center", textAlign: "center", zIndex: "100", marginTop: "50px", transform: "translateX(0%)", position: "fixed", maxHeight: "400px", overflowY: "auto" }} onClick={handleCloseModal}>
-    {searchClicked && searchItemResult.length > 0 ? (
+    {searchClicked && searchItemResult?.length > 0 ? (
         <div>
             {searchItemResult.map((result, index) => (
                 <div className="cards" key={index} style={{ width: "100%", display: "flex", alignItems: "flex-start" }}>

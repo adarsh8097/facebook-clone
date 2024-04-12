@@ -69,19 +69,20 @@ export default function UserDataProfile(){
             <img src="https://images.unsplash.com/photo-1549813069-f95e44d7f498?q=80&w=1656&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style={{height:"100%", width:"100%",backgroundSize:"contain"}} alt="..."/>
           </div>
           <div className="bg-dark absolute border" style={{ position: "absolute", marginLeft: "15px", height: "100px", width: "100px", marginTop: "-40px", borderRadius: "50%",  overflow: "hidden" }}>
-            { userData.profileImage ? <img src={userData.profileImage} alt="..." style={{ height: "100%", width: "100%", objectFit: "cover" }} />:<CgProfile style={{ color:"white",objectFit: "cover", height: "100%", width: "100%" }} />}
+            { userData?.author?.profileImage || userData?.profileImage ? <img src={userData?.author?.profileImage || userData?.profileImage } alt="..." style={{ height: "100%", width: "100%", objectFit: "cover" }} />:<CgProfile style={{ color:"white",objectFit: "cover", height: "100%", width: "100%" }} />}
           </div>
           <div className="d-flex mt-4 justify-content-around text-white">
             <div className="" style={{marginLeft:"12rem"}}>
-              <h2>{userData.name}</h2>
-              <p style={{fontSize:'12px',opacity:"0.5"}}>{moment(userData.createdAt).format('MMMM Do YYYY')}</p>
+              <h2>{userData?.author?.name || userData?.name}</h2>
+              <p style={{fontSize:'12px',opacity:"0.5"}}>{moment(userData?.author?.createdAt|| userData?.createdAt).format('MMMM Do YYYY')}</p>
            
               <div className="d-flex  row" style={{fontSize:'12px',opacity:"0.5"}}>
-                <p>email:{userData.email}</p>
-                <p>gender:{userData.gender ?userData.gender:"Not found"}</p>
-                <p>phone:{userData.phone ? userData.phone:"not found"}</p>
+                {/* <p>name:{userData?.author?.name || userData?.name ? userData?.author?.name || userData?.name : "No data found"}</p> */}
+                <p>email:{userData?.author?.email || userData?.email ? userData?.author?.email || userData?.email : "No data found"}</p>
+                <p>gender:{userData?.author?.gender|| userData?.gender ? userData?.author?.gender|| userData?.gender: "Not found"}</p>
+                <p>phone:{userData?.author?.phone || userData?.phone?  userData?.author?.phone|| userData?.phone:"not found"}</p>
                 <p></p>
-                <p style={{fontSize:'12px',opacity:"0.5"}}>UpdateAccount:{moment(userData.updateAt).format('MMMM Do YYYY')}</p>
+                <p style={{fontSize:'12px',opacity:"0.5"}}>UpdateAccount:{moment(userData?.author?.updateAt|| userData?.updateAt).format('MMMM Do YYYY')}</p>
               </div>
             </div>
             <div className="userbtn">
@@ -102,11 +103,11 @@ export default function UserDataProfile(){
         <div className="d-flex m-1" style={{marginLeft:"15rem"}}>
         {
           skills ? (<div className="card w-75 bg-dark text-white border col-12 p-2 active" style={{margin:"auto",padding:"10px",marginTop:"10px", maxHeight: "300px", overflowY: "auto" }}>
-         {userData.skills && userData.skills.length > 0 ? (
+         { userData?.skills &&  userData?.skills?.length > 0 ? (
                 <div>
                   <p style={{justifyContent:"center",fontWeight:"bold",marginLeft:"20px"}}>Skills</p>
                   <ul>
-                    {userData.skills.map((d,index)=>(
+                    { userData?.skills.map((d,index)=>(
                       <li key={index} style={{listStyle:"none"}}>{d}</li>
                     ))}
                   </ul>
@@ -122,7 +123,7 @@ export default function UserDataProfile(){
        {
         education ?(
           <div className="card w-75 bg-dark text-white border bordercol-12 p-2 " style={{margin:"auto",padding:"10px",marginTop:"10px", maxHeight: "300px", overflowY: "auto" }}>
-             {userData.education && userData.education.length > 0 ? (
+             {userData?.education && userData?.education?.length > 0 ? (
                 <div>
                   <p style={{justifyContent:"center",fontWeight:"bold",marginLeft:"20px"}}>Education</p>
                   <ul>
@@ -149,11 +150,11 @@ export default function UserDataProfile(){
         {
           experience ?(
             <div className="card w-75 bg-dark text-white border col-12 p-2 " style={{margin:"auto",padding:"10px",marginTop:"10px", maxHeight: "300px", overflowY: "auto" }}>
-             {userData.workExperience && userData.workExperience.length > 0 ? (
+             {userData?.workExperience && userData?.workExperience?.length > 0 ? (
                 <div>
                   <p style={{justifyContent:"center",fontWeight:"bold",marginLeft:"20px"}}>workExperience</p>
                   <ul>
-                    {userData.workExperience.map((d,index)=>(
+                    {userData?.workExperience?.map((d,index)=>(
                       <li key={index}>
                         <p>CompanyName:{d.companyName}</p>
                         <p>Description:{d.description}</p>
@@ -177,11 +178,11 @@ export default function UserDataProfile(){
        {
         address?(
           <div className="card w-75 bg-dark text-white border p-2  col-12 height-auto" style={{margin:"auto",padding:"10px",marginTop:"10px", maxHeight: "300px", overflowY: "auto"}}>
-          {userData.address && userData.address.length > 0 ? (
+          {userData?.address && userData?.address?.length > 0 ? (
                 <div>
                   <p style={{justifyContent:"center",fontWeight:"bold",marginLeft:"20px"}}>Address</p>
                   <ul>
-                    {userData.address.map((d,index)=>(
+                    {userData?.address.map((d,index)=>(
                       <li key={index}>
                         <p>city:{d.city}</p>
                         <p>Country:{d.country}</p>

@@ -11,7 +11,7 @@ import { MyContext } from "../Context/Context";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Card, Button } from 'react-bootstrap'; 
 
 
 
@@ -23,7 +23,7 @@ const AllPost = () => {
     const [selectedPost, setSelectedPost] = useState(null);
    
 
-    const{ setPostUser,UpvotingCount,likes,createComment,editPost} = useContext(MyContext);
+    const{ setPostUser,UpvotingCount,likes,createComment,editPost,isdeletePost , setDeltePost,deletePost,setOpen,} = useContext(MyContext);
 
    
 
@@ -46,9 +46,11 @@ const AllPost = () => {
           setPostDetails(data.data)
          
         });
-    }, [likes,createComment,editPost]);
+    }, [likes,createComment,editPost,isdeletePost]);
+
 
     const handlePostClick = (post) => {
+       setOpen(true);
       setSelectedPost(post);
   };
 
@@ -67,13 +69,14 @@ const AllPost = () => {
    }
 
    
-
-    return (
-      <div>
+ return (
+      <>
         <ToastContainer/>
+        {/* <div className="container"> */}
         {postDetail && postDetail.map((post) => 
-        <div key={post._id} className="Posted">
-        <div className="poster">
+         
+        <div key={post._id} className="card m-3">
+        <div className="poster card-header" style={{width:"100%"}}>
             <div className="Simplilearn">
                 
                                 <div style={{ marginRight: "10px" }}>
@@ -93,25 +96,31 @@ const AllPost = () => {
             </div>
             
             
-            <div className="edit">
-                <MdMoreHoriz fontSize="2.5rem" cursor="pointer" onClick={handleAlert}/>
+            <div className="edit" style={{marginTop:"30px"}}>
+                <MdMoreHoriz fontSize="2.5rem" cursor="pointer" onClick={()=>{
+                  deletePost(post._id);
+                  // setDeltePost(true);
+                }}/>
             </div>
          </div>
-        <div className="caption" >
+        <div className="caption card-body" >
         <p>{post.content}</p>
-        </div>
+        
         <br></br>
-        {post?.images ? (<div className="PostImg" style={{cursor:"pointer"}} onClick={(e) => handlePostClick(post)}>
-        <img src={post.images} alt="image" />
+        <div className="" style={{ cursor: "pointer", width: "100%", height: "100%", maxWidth: "100%" }}>
+        {post?.images ? (<div className="PostImg" style={{ cursor: "pointer", width: "100%", height: "100%", maxWidth: "100%" }} onClick={(e) => handlePostClick(post)}>
+        <img src={post.images} alt="image"  style={{ width: "100%", height: "100%", maxWidth: "100%" }} />
         
         </div>):(
           <div>
              <p>Data Not Found</p>
             </div>
-        ) }
-        
 
-        <div className="Comment">
+        ) }
+        </div>
+        </div>
+
+        <div className="Comment card-footer">
             {/* <div className="Like" likeCount={post.likeCount}  liked={post.liked} onClick={(e)=>UpvotingCount(post._id)}>
              <FaRegThumbsUp color={post.liked ? 'blue' : 'grey'} fontSize="2rem" onClick={handleLike} /> 
                {isLiked ? `${post.likeCount-1}`: `${post.likeCount}`}
@@ -136,7 +145,9 @@ const AllPost = () => {
                 <SinglePost post={selectedPost} onClose={handleClose} />
             )}
           
-      </div>
+      {/* </div> */}
+      </>
+
     );
   };
 

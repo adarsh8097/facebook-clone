@@ -10,15 +10,33 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+// import * as React from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
-
+const style = {
+    position: 'absolute', 
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 800,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
 
 
 const SinglePost = ({ post, onClose }) => {
- const{UpvotingCount,CommentPost,comment,CreateComment,createComment,userDetail} = useContext(MyContext);
+ const{UpvotingCount,CommentPost,comment,CreateComment,createComment,userDetail,open, setOpen} = useContext(MyContext);
  const[likes , setlike ] = useState(false);
  const [content,setContent] = useState('');
  const[message , setMessage] = useState(post.commentCount);
+
+ 
+ const handleClose = () => setOpen(false);
 
    console.log("createcoment",createComment)
   useEffect(()=>{
@@ -44,6 +62,16 @@ function handleAlert(){
 // console.log("Commentdata",comment);
 // console.log("UserDetails",userDetail.name);
     return (
+        
+
+        <>
+           <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        {/* <Box sx={style}> */}
         <>
             {post &&
                 <div className="fluid-container" style={{
@@ -52,7 +80,7 @@ function handleAlert(){
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    backgroundColor: "rgba(0, 0, 0, 0.9)",
+                    backgroundColor: "rgba(0, 0, 0, 0.8)",
                     zIndex: 50,
                     margin: 0,
                     padding: 0,
@@ -61,7 +89,7 @@ function handleAlert(){
                     justifyContent: "center",
                     zIndex:100
                 }}>
-                    <div className="modal-content relative" style={{ padding: "20px", borderRadius: "5px", width: "80%", maxWidth: "900px" }}  onClick={(e) => e.stopPropagation()}>
+                    <div className="modal-content relative" style={{ padding: "20px",zIndex:1000,position:"fixed", borderRadius: "5px", width: "80%", maxWidth: "900px" }}  onClick={(e) => e.stopPropagation()}>
                         <button className="btn btn-danger px-2 py-3" style={{ borderRadius:"50%" ,position: "absolute", top: 0, right: 0, width: "4rem" }} onClick={onClose}>X</button>
                         <div  className=" fluid-container row mt-5">
                             <div className="col-md-8">
@@ -83,7 +111,7 @@ function handleAlert(){
                                 <div className="ms-2 caption" style={{ color: "white", maxWidth: '550px', overflow: 'hidden', textOverflow: 'linear' }}>
                                 <p className="" style={{ display: "inline-block", marginTop:'10px' }}>{post.content}</p>
                             </div>
-                                <div className="PostImg" style={{height:"80%",width:"80%"}}>
+                                <div className="PostImg" style={{height:"80%",width:"90%"}}>
                                     <img src={post.images} alt="image" height="100%" width="100%" />
                                 </div>
                             </div>
@@ -116,7 +144,7 @@ function handleAlert(){
                 <div style={{ marginRight: "5px" }}>
                      <CgProfile style={{ fontSize: "22px", borderRadius: "100%" }} />
                  </div>
-                <div className="card w-50 mb-3 bg-light border text-dark " key={index} >
+                <div className="card w-75 mb-3 bg-dark border text-light " key={index} >
             
                 <div className="" style={{fontWeight:"bold"}}>{userDetail.name}</div>
                 <div className="ms-5">{item.content}</div>
@@ -124,8 +152,8 @@ function handleAlert(){
                </div>
              </div>
                      <div className="d-flex justify-content-around w-50 " style={{marginLeft:"20px"}}>
-                                 <p style={{fontSize:'12px',opacity:"0.5" ,cursor:"pointer"}}>Like</p>
-                               <p style={{fontSize:'12px',opacity:"0.5",cursor:"pointer"}}>reply</p>
+                                 <p style={{fontSize:'12px',opacity:"0.5" ,cursor:"pointer"}} onClick={handleAlert}>Like</p>
+                               <p style={{fontSize:'12px',opacity:"0.5",cursor:"pointer"}} onClick={handleAlert}>reply</p>
                              <p style={{fontSize:'12px',opacity:"0.5"}}>
                            {moment(post.createdAt).format('Do')}
                           </p>
@@ -153,6 +181,9 @@ function handleAlert(){
             }
 
             {/* <AllPost post={post}/> */}
+        </>
+        {/* </Box> */}
+      </Modal>
         </>
     )
 
