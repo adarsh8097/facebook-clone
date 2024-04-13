@@ -73,8 +73,9 @@ function handleAlert(){
       >
         {/* <Box sx={style}> */}
         <>
+
             {post &&
-                <div className="fluid-container" style={{
+                <div className="fluid-container " style={{
                     position: "fixed",
                     top: 0,
                     left: 0,
@@ -90,7 +91,7 @@ function handleAlert(){
                     zIndex:100
                 }}>
                     <div className="modal-content relative" style={{ padding: "20px",zIndex:1000,position:"fixed", borderRadius: "5px", width: "80%", maxWidth: "900px" }}  onClick={(e) => e.stopPropagation()}>
-                        <button className="btn btn-danger px-2 py-3" style={{ borderRadius:"50%" ,position: "absolute", top: 0, right: 0, width: "4rem" }} onClick={onClose}>X</button>
+                        <button className="btn btn-danger px-2 py-3 closeControl" style={{ borderRadius:"50%" ,position: "absolute", top: 0, right: 0, width: "4rem" }} onClick={onClose}>X</button>
                         <div  className=" fluid-container row mt-5">
                             <div className="col-md-8">
                                 <div className="d-flex align-items-center text-white">
@@ -115,7 +116,7 @@ function handleAlert(){
                                     <img src={post.images} alt="image" height="100%" width="100%" />
                                 </div>
                             </div>
-                            <div className="col-md-4 mt-5" style={{height:"500px"}}>
+                            <div className="col-md-4 commentContent commentSectionpart" >
                                 {/* Add comments, likes, shares section here */}
                                 <div className=" border border-white p-3 text-white">
                                 <div className="Comment">
@@ -135,7 +136,7 @@ function handleAlert(){
      <div className="relative fluid-container border text-white d-flex flex-column justify-content-between" style={{ height: "90%", overflowY: 'auto' }}>
    
     
-    <div className="fluid-container">
+    <div className="fluid-container ">
     <h2 className="mt-3">Comments</h2>
         {comment.map((item, index) => (
             <div key={index}>

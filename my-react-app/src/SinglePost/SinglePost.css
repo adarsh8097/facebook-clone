@@ -56,3 +56,35 @@
    
 }
 
+.commentSectionpart{
+    height: 500px;
+}
+
+    @media only screen and (max-width: 767px) {
+        .modal-content {
+          margin-top: 0%; 
+          
+        }
+
+        /* .PostImg{
+            width: 100%;
+            height: 100%;
+        } */
+       .closeControl{
+        margin-top: 30px;
+       }
+        .commentContent{
+            margin-top:20%;
+        }
+
+        .commentSectionpart{
+            width: 500px;
+            height: 300px;
+            z-index: 100%;
+            background-color: black;    
+            
+            /* background:red; */
+        }
+
+      }
+

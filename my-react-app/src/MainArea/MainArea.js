@@ -14,7 +14,7 @@
 
     const MainArea =()=>{
         // const userDetail = JSON.parse(localStorage.getItem("userdetails")|| "{}");
-        const{userDetail,userToken,projectID,setEditPost,editPost} = useContext(MyContext);
+        const{userDetail,userToken,projectID,setEditPost,editPost,setSearchClicked} = useContext(MyContext);
 
         // console.log("Careting Post",CreatingPost);
         let userName = userDetail.name;
@@ -29,6 +29,10 @@
         function close(){
             document.getElementById('mod1').style.display="none";
         }
+
+        function handleCloseModal(){
+            setSearchClicked(false);
+     }
 
         // function open(){
         //     document.getElementById('mod1').style.display="block";
@@ -131,7 +135,7 @@
         return(
             <>
             {/* <ToastContainer/> */}
-        <div className="Main container">
+        <div className="Main container" onClick={handleCloseModal}>
             <div className="Rside position-fixed">
             <div className="Profile">
             <Link to={`/AllPost/${userDetail._id}`}> <img src="/images/images.jpg" alt="dp" style={{height:"60px", width:"60px",padding:"1rem",borderRadius: "50%"}}/>  
@@ -191,7 +195,7 @@
                 </div>
             </div> 
         
-            <div className="MainArea">
+            <div className="MainArea" onClick={handleCloseModal}>
                 <div className="addStory">
                 <div className="zoomStory">
                 <div className="Story">
@@ -307,7 +311,7 @@
 
 
 
-               <div className="message" style={{width:"80%"}}>
+               <div className="message" style={{width:"80%"}} onClick={handleCloseModal}>
                     <div className="text postecontainer">
                         <div className="Post">
                             <img src ="/images/images.jpg" alt="PIC"/>
@@ -342,7 +346,7 @@
                 
                 </div>
 
-            {openModel &&  <div className="model" data-tested="model" id="mod1" >
+            {openModel &&  <div className="model" data-tested="model" id="mod1" onClick={handleCloseModal}>
                 <div className="model-outer">
                     <div role="dilog" className="model-part">
                         <div className="model-head" style={{transform:'none'}}>
@@ -452,7 +456,7 @@
             </div> 
             }
 
-            <div className="Lside">
+            <div className="Lside" onClick={handleCloseModal}>
                 <div className="LsidePart position-fixed">
                 <div className="Contact">
                     <div className="Contacts">
