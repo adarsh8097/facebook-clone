@@ -119,8 +119,11 @@ for (let year = 1905; year <= 2024; year++) {
 
         <>
         <ToastContainer/>
+        <div className="container">
+            <div className="row justify-content-center">
+                <div className="col-md-8">
          <div className="signup">
-            <div className="signup-cotainer">
+            <div className="">
                 
             <div className="headerbox">
                 </div>
@@ -263,6 +266,12 @@ for (let year = 1905; year <= 2024; year++) {
             </div>
 
         </div>
+        </div>
+        </div>
+
+</div>
+   
+
         </>
         
     );

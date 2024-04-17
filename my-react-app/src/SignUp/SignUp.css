@@ -309,7 +309,7 @@ input{
 }
 .signup-boxes p{
  
-  margin-right: 5px;
+  /* margin-right: 5px; */
  margin-top: 5px;
    
 
@@ -430,7 +430,7 @@ label{
     font-size: 11px;
     margin-bottom: 10px;
     margin-top: 2px;
-    margin-right: 0px;
+    /* margin-right: 0px; */
 }
 
 a{
@@ -455,3 +455,154 @@ a{
     
 
 }
+
+@media only screen and (max-width: 767px) {
+    .signup{
+        position: absolute;
+        justify-content: center;
+        z-index: 10;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: white;
+        box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        padding: auto;
+        height: auto;
+        width: 375px;
+        
+        /* margin: 10px; */
+    }
+    .signup-boxes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:center;
+        width: 100%;
+        margin-left: 10px;
+
+        /* gap: 10px; */
+       
+    
+    }
+    .signup-boxes p{
+ 
+        margin-left: 5px;
+       margin-top: 5px;
+         
+      
+      }
+      
+      .birthday{
+          width: 94%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          /* gap: 10px; */
+          margin-top: 5px;
+          /* margin-left: 20px; */
+          /* padding: 10px; */
+          
+         
+      
+      }
+
+      .chuse-gender{
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        /* gap: 10px; */
+        margin-bottom: 10px;
+        border: 1px solid bla;
+       justify-content: space-evenly;
+       /* margin-left: 20px; */
+    }
+
+    .redi{
+        box-sizing: border-box;
+       width:20%;
+       align-items: center;
+       margin-bottom: 5px;
+       justify-content: space-between;
+       line-height: 2rem;
+       margin-left: 36px;
+       margin-bottom: 2px;
+       padding-bottom: 1rem;
+       line-height: 12px;
+      
+       vertical-align: center;
+    }
+
+
+}
+
+@media only screen and (max-width: 288px) {
+    .signup {
+        position: absolute;
+        justify-content: center;
+        z-index: 10;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: white;
+        box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        padding: auto;
+        height: auto;
+        width: 100%; /* Adjust width as needed */
+    }
+    .signup{
+        width: 240px;
+        margin-top: 40px;
+    }
+
+    .signup-boxes p {
+        margin-left: 100px;
+        margin-top: 5px;
+    }
+
+    .birthday {
+        width: 10%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5px;
+        /* padding-left: 10px; */
+        margin-left: 45%;
+    }
+
+    .chuse-gender {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin-bottom: 10px;
+        border: 1px solid bla;
+        justify-content: space-evenly;
+        margin-left: 100px;
+    }
+
+    .redi {
+        box-sizing: border-box;
+        width: 10%;
+        align-items: center;
+        margin-bottom: 5px;
+        justify-content: space-between;
+        line-height: 2rem;
+        /* margin-left: 36px; */
+        margin-bottom: 2px;
+        padding-bottom: 1rem;
+        line-height: 12px;
+        vertical-align: center;
+    }
+
+    
+    #signup-btn{
+   width: 100%;
+    }
+    
+
+}
+
+

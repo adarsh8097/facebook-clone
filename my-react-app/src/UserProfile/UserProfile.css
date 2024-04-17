@@ -197,13 +197,18 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
  }
 
- @media only screen and (max-width: 667px) {
+ @media only screen and (max-width: 767px) {
      .main_body{
-        width: 50%;
-        margin-top:20%;
-        top: -80%;
-        transform: translatex(-50%);
+        /* width: 100%; */
+        margin-top:29%;
+        /* top: -80%; */
+        /* transform: translateY(-50%); */
+        /* justify-content: center; */
         box-shadow: none;
+        /* margin-left: 50%; */
+        /* padding: 10px; */
+
+        
         
 
      }

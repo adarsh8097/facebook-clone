@@ -655,7 +655,7 @@ input::placeholder{
       
         .message{
             display: grid;
-             align-items: center;
+             align-items: center;   
             justify-content: center;
             height: 60%;
             width: 85%;
@@ -671,6 +671,7 @@ input::placeholder{
             justify-content: center;
             align-items: center;
             /* margin-right: 0%; */
+            margin-top: 60px;
         }
        
     
@@ -761,6 +762,7 @@ input::placeholder{
     .postContentitem{
         /* padding: 5%; */
         margin-left:15%;
+        /* margin-top: 20px; */
         /* padding: 10px; */
         
     }

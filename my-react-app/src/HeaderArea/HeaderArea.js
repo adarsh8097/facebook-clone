@@ -62,7 +62,7 @@ function HeaderArea({history }) {
                     </div>
                     <div className="third-header">
                         <div className="plus">
-                           <Link to="/HomePage"> <FaPlusCircle fontSize="2rem" color="black" /></Link>
+                           <Link to="/HomePage"><FaPlusCircle fontSize="2rem" color="black" /></Link>
                         </div>
                         <div className="plus"  onClick={onmesg}>
                             <FaFacebookMessenger fontSize="2rem" />
