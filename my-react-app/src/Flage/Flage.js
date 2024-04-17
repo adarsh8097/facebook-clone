@@ -38,11 +38,12 @@ const FlagePost = () => {
             <HeaderArea />
             <div className="flage">
                 {/* MyPage component fixed to the left side */}
-                <div className="MyPage w-50 col-sm-12 col-md-12 col-12 bg-light text-white height-auto " style={{zIndex:"0",marginTop:"2rem"}}>
-                   <div className="Mypagedata position-fixed"> 
-                   <MyPage style={{width:"100%"}}/>
-                   </div>
-                </div>
+                <div className="MyPage w-100 col-sm-12 col-md-12 col-12 bg-light text-white height-auto" style={{zIndex:"0",marginTop:"2rem"}}>
+    <div className="Mypagedata"> 
+        <MyPage style={{width:"100%"}}/>
+    </div>
+</div>
+
 
                 <div className="col-sm-12 col-md-12 col-12  bg-dark" style={{ display: "flex", flexDirection: "column", overflow: "hidden" }}>
                     <div className="card-container row" style={{ display: "flex", flexDirection: "row", justifyContent: "center", marginTop: "10rem" }}>

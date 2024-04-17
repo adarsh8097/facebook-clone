@@ -13,19 +13,24 @@
 
 
 
-@media only screen and (max-width:767px){
-    .Mypagedata{
-        z-index: 10;
-        position: sticky;
-        margin-bottom: 2rem;
-        height: auto;
-        width: 100%;
-        margin-top: 20px;
-        /* padding: 20px; */
-        /* background-color: red; */
-       
+/* @media only screen and (max-width:767px){ */
+    @media only screen and (max-width: 767px) {
+        .Mypagedata {
+            position: -webkit-sticky; /* For Safari */
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            margin-bottom: 2rem;
+            height: auto;
+            width: 100%;
+            margin-top: 25%;
+            /* Other styles */
+        }
+
+
     }
-}
+/*     
+} */
 
 @media only screen and (min-width:768px) and (max-width:1023px){
     .Mypagedata{

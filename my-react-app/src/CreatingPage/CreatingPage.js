@@ -113,7 +113,7 @@ export default function MyPage(){
                     />
                 </div>
                 Tell people a little about what you do.
-                <button type="submit" className="btn btn-primary p-4 m-5"   style={{fontSize:"15px"}}>Submit</button>
+                <button type="submit" className="btn btn-primary p-4 m-5 "   style={{fontSize:"15px"}}>Submit</button>
                 </div>
             </form>
         </>
