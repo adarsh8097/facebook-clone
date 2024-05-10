@@ -116,7 +116,7 @@ function handleAlert(){
                                     <img src={post.images} alt="image" height="100%" width="100%" />
                                 </div>
                             </div>
-                            <div className="col-md-4 commentContent commentSectionpart" >
+                            <div className="col-md-4 commentContent commentSectionpart " >
                                 {/* Add comments, likes, shares section here */}
                                 <div className=" border border-white p-3 text-white">
                                 <div className="Comment">
@@ -133,10 +133,10 @@ function handleAlert(){
                                 </div>
                                  </div>
                              </div>
-     <div className="relative fluid-container border text-white d-flex flex-column justify-content-between" style={{ height: "90%", overflowY: 'auto' }}>
+     <div className="relative fluid-container border text-white d-flex flex-column justify-content-between bg-dark" style={{ height: "90%", overflowY: 'auto' }}>
    
     
-    <div className="fluid-container ">
+    <div className="fluid-container">
     <h2 className="mt-3">Comments</h2>
         {comment.map((item, index) => (
             <div key={index}>
@@ -145,9 +145,9 @@ function handleAlert(){
                 <div style={{ marginRight: "5px" }}>
                      <CgProfile style={{ fontSize: "22px", borderRadius: "100%" }} />
                  </div>
-                <div className="card w-75 mb-3 bg-dark border text-light " key={index} >
+                <div className="card w-75 mb-3  bg-dark border text-light " key={index} >
             
-                <div className="" style={{fontWeight:"bold"}}>{userDetail.name}</div>
+                <div className="text-light" style={{fontWeight:"bold"}}>{userDetail.user.name}</div>
                 <div className="ms-5">{item.content}</div>
                 
                </div>

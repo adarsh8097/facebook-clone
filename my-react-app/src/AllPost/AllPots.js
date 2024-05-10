@@ -100,8 +100,12 @@ const AllPost = () => {
                 <MdMoreHoriz fontSize="2.5rem" cursor="pointer" onClick={()=>{
                   deletePost(post._id);
                   // setDeltePost(true);
+
+
                 }}/>
             </div>
+          
+           
          </div>
         <div className="caption card-body" >
         <p>{post.content}</p>
